@@ -4,7 +4,8 @@
  *      C = (F - 32) * 5/9
  */
 export function fahrenheitToCelius(temperature: number): number {
-    return 0;
+    const celcius: number = ((temperature - 32) * 5) / 9;
+    return celcius;
 }
 
 /**
@@ -12,7 +13,27 @@ export function fahrenheitToCelius(temperature: number): number {
  * if the number is greater than zero.
  */
 export function add3(first: number, second: number, third: number): number {
-    return 0;
+    if (first > 0) {
+        if (second > 0 && third > 0) {
+            return first + second + third;
+        } else if (second > 0) {
+            return first + second;
+        } else if (third > 0) {
+            return first + third;
+        } else {
+            return first;
+        }
+    } else {
+        if (second > 0 && third > 0) {
+            return second + third;
+        } else if (second > 0) {
+            return second;
+        } else if (third > 0) {
+            return third;
+        } else {
+            return 0;
+        }
+    }
 }
 
 /**
@@ -20,7 +41,7 @@ export function add3(first: number, second: number, third: number): number {
  * mark added to the end.
  */
 export function shout(message: string): string {
-    return "";
+    return message.toUpperCase() + "!";
 }
 
 /**
@@ -28,7 +49,12 @@ export function shout(message: string): string {
  * mark. Do not use an `if` statement in solving this question.
  */
 export function isQuestion(message: string): boolean {
-    return true;
+    const strLen: number = message.length;
+    if (message.charAt(strLen - 1) === "?") {
+        return true;
+    } else {
+        return false;
+    }
 }
 
 /**
@@ -37,5 +63,11 @@ export function isQuestion(message: string): boolean {
  * upper or lower case), then return `false`. Otherwise, return `null`.
  */
 export function convertYesNo(word: string): boolean | null {
-    return true;
+    if (word === "yes" || word === "YES") {
+        return true;
+    } else if (word === "no" || word === "NO") {
+        return false;
+    } else {
+        return null;
+    }
 }
