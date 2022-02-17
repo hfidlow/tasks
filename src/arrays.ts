@@ -1,3 +1,5 @@
+import { getValue } from "@testing-library/user-event/dist/utils";
+
 /**
  * Consume an array of numbers, and return a new array containing
  * JUST the first and last number. If there are no elements, return
@@ -5,7 +7,16 @@
  * the number twice.
  */
 export function bookEndList(numbers: number[]): number[] {
-    return numbers;
+    if (numbers.length === 0) {
+        return numbers;
+    } else if (numbers.length === 1) {
+        return [...numbers, ...numbers];
+    } else {
+        const middle = numbers.length - 2;
+        const numbers2 = [...numbers];
+        numbers2.splice(1, middle);
+        return numbers2;
+    }
 }
 
 /**
@@ -13,7 +24,8 @@ export function bookEndList(numbers: number[]): number[] {
  * number has been tripled (multiplied by 3).
  */
 export function tripleNumbers(numbers: number[]): number[] {
-    return numbers;
+    const tripled = numbers.map((numb: number): number => numb * 3);
+    return tripled;
 }
 
 /**
@@ -21,7 +33,11 @@ export function tripleNumbers(numbers: number[]): number[] {
  * the number cannot be parsed as an integer, convert it to 0 instead.
  */
 export function stringsToIntegers(numbers: string[]): number[] {
-    return [];
+    const strVals = numbers.map((val: string): string =>
+        isNaN(val) ? (val = "0") : val
+    );
+    const intvals = strVals.map((numb: string): number => parseInt(numb));
+    return intvals;
 }
 
 /**
@@ -32,7 +48,14 @@ export function stringsToIntegers(numbers: string[]): number[] {
  */
 // Remember, you can write functions as lambdas too! They work exactly the same.
 export const removeDollars = (amounts: string[]): number[] => {
-    return [];
+    const strVals = amounts.map((val: string): string =>
+        isNaN(val) ? val.replace("$", "0") : val
+    );
+    const strVals2 = strVals.map((val: string): string =>
+        isNaN(val) ? (val = "0") : val
+    );
+    const intvals = strVals2.map((numb: string): number => parseInt(numb));
+    return intvals;
 };
 
 /**
@@ -41,7 +64,13 @@ export const removeDollars = (amounts: string[]): number[] => {
  * in question marks ("?").
  */
 export const shoutIfExclaiming = (messages: string[]): string[] => {
-    return [];
+    const noQuestions = messages.filter(
+        (message: string): boolean => message.charAt(message.length - 1) === "?"
+    );
+    const shout = noQuestions.map((val: string): string =>
+        val.charAt(val.length - 1) === "!" ? val.toUpperCase : val
+    );
+    return shout;
 };
 
 /**
@@ -49,7 +78,8 @@ export const shoutIfExclaiming = (messages: string[]): string[] => {
  * 4 letters long.
  */
 export function countShortWords(words: string[]): number {
-    return 0;
+    const wordsUnder = words.filter((word: string): string => word.length < 4);
+    return wordsUnder.length;
 }
 
 /**
@@ -58,7 +88,19 @@ export function countShortWords(words: string[]): number {
  * then return true.
  */
 export function allRGB(colors: string[]): boolean {
-    return false;
+    if (colors.length === 0) {
+        return true;
+    } else {
+        const nonRGB = colors.filter(
+            (word: string): string =>
+                word !== "red" && word !== "green" && word !== "blue"
+        );
+        if (nonRGB.length > 0) {
+            return false;
+        } else {
+            return true;
+        }
+    }
 }
 
 /**
@@ -69,7 +111,17 @@ export function allRGB(colors: string[]): boolean {
  * And the array [] would become "0=0".
  */
 export function makeMath(addends: number[]): string {
-    return "";
+    if (addends.length === 0) {
+        addends = [0];
+    }
+    const sum = addends.reduce(
+        (currentTotal: number, num: number) => currentTotal + num,
+        0
+    );
+    sum.toString;
+    const adding = addends.join("+");
+    const final = sum + "=" + adding;
+    return final;
 }
 
 /**
@@ -82,5 +134,15 @@ export function makeMath(addends: number[]): string {
  * And the array [1, 9, 7] would become [1, 9, 7, 17]
  */
 export function injectPositive(values: number[]): number[] {
-    return [];
+    let firstNegative = values.find((values: number): boolean => values < 0);
+    const values2 = [...values];
+    if (isNaN(firstNegative)) {
+        firstNegative = values.length;
+    }
+    values2.splice(0, values2.length - firstNegative);
+    const sum = values2.reduce(
+        (currentTotal: number, num: number) => currentTotal + num,
+        0
+    );
+    return values.splice(firstNegative, 0, sum);
 }
