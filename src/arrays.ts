@@ -1,5 +1,5 @@
-import { getValue } from "@testing-library/user-event/dist/utils";
-import { isNumberObject } from "util/types";
+//import { getValue } from "@testing-library/user-event/dist/utils";
+//import { isNumberObject } from "util/types";
 
 /**
  * Consume an array of numbers, and return a new array containing
