@@ -135,7 +135,7 @@ export function makeMath(addends: number[]): string {
  * And the array [1, 9, 7] would become [1, 9, 7, 17]
  */
 export function injectPositive(values: number[]): number[] {
-    let firstNegative = values.findIndex(
+    const firstNegative = values.findIndex(
         (values: number): boolean => values < 0
     );
     const values2 = [...values];
