@@ -35,7 +35,7 @@ export function tripleNumbers(numbers: number[]): number[] {
  */
 export function stringsToIntegers(numbers: string[]): number[] {
     const strVals = numbers.map((val: string): string =>
-        isNaN(val) ? (val = "0") : val
+        isNaN(parseInt(val)) ? (val = "0") : val
     );
     const intvals = strVals.map((numb: string): number => parseInt(numb));
     return intvals;
@@ -50,7 +50,7 @@ export function stringsToIntegers(numbers: string[]): number[] {
 // Remember, you can write functions as lambdas too! They work exactly the same.
 export const removeDollars = (amounts: string[]): number[] => {
     const strVals = amounts.map((val: string): string =>
-        isNaN(val) ? val.replace("$", "0") : val
+        isNaN(parseInt(val)) ? val.replace("$", "0") : val
     );
     const intvals = strVals.map((numb: string): number => parseInt(numb));
     const intvals2 = intvals.map((numb: number): number =>
@@ -79,7 +79,7 @@ export const shoutIfExclaiming = (messages: string[]): string[] => {
  * 4 letters long.
  */
 export function countShortWords(words: string[]): number {
-    const wordsUnder = words.filter((word: string): string => word.length < 4);
+    const wordsUnder = words.filter((word: string): boolean => word.length < 4);
     return wordsUnder.length;
 }
 
@@ -93,7 +93,7 @@ export function allRGB(colors: string[]): boolean {
         return true;
     } else {
         const nonRGB = colors.filter(
-            (word: string): string =>
+            (word: string): boolean =>
                 word !== "red" && word !== "green" && word !== "blue"
         );
         if (nonRGB.length > 0) {
