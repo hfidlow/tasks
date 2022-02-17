@@ -1,4 +1,5 @@
 import { getValue } from "@testing-library/user-event/dist/utils";
+import { isNumberObject } from "util/types";
 
 /**
  * Consume an array of numbers, and return a new array containing
@@ -51,11 +52,11 @@ export const removeDollars = (amounts: string[]): number[] => {
     const strVals = amounts.map((val: string): string =>
         isNaN(val) ? val.replace("$", "0") : val
     );
-    const strVals2 = strVals.map((val: string): string =>
-        isNaN(val) ? (val = "0") : val
+    const intvals = strVals.map((numb: string): number => parseInt(numb));
+    const intvals2 = intvals.map((numb: number): number =>
+        isNaN(numb) ? (numb = 0) : numb
     );
-    const intvals = strVals2.map((numb: string): number => parseInt(numb));
-    return intvals;
+    return intvals2;
 };
 
 /**
@@ -65,10 +66,10 @@ export const removeDollars = (amounts: string[]): number[] => {
  */
 export const shoutIfExclaiming = (messages: string[]): string[] => {
     const noQuestions = messages.filter(
-        (message: string): boolean => message.charAt(message.length - 1) === "?"
+        (message: string): boolean => message.charAt(message.length - 1) !== "?"
     );
     const shout = noQuestions.map((val: string): string =>
-        val.charAt(val.length - 1) === "!" ? val.toUpperCase : val
+        val.charAt(val.length - 1) === "!" ? val.toUpperCase() : val
     );
     return shout;
 };
@@ -134,15 +135,24 @@ export function makeMath(addends: number[]): string {
  * And the array [1, 9, 7] would become [1, 9, 7, 17]
  */
 export function injectPositive(values: number[]): number[] {
-    let firstNegative = values.find((values: number): boolean => values < 0);
-    const values2 = [...values];
-    if (isNaN(firstNegative)) {
-        firstNegative = values.length;
-    }
-    values2.splice(0, values2.length - firstNegative);
-    const sum = values2.reduce(
-        (currentTotal: number, num: number) => currentTotal + num,
-        0
+    let firstNegative = values.findIndex(
+        (values: number): boolean => values < 0
     );
-    return values.splice(firstNegative, 0, sum);
+    const values2 = [...values];
+    if (firstNegative === -1) {
+        const sum = values.reduce(
+            (currentTotal: number, num: number) => currentTotal + num,
+            0
+        );
+        return [...values2, sum];
+    } else {
+        values2.splice(firstNegative, values.length - firstNegative);
+        const sum = values2.reduce(
+            (currentTotal: number, num: number) => currentTotal + num,
+            0
+        );
+        const values3 = [...values];
+        values3.splice(firstNegative + 1, 0, sum);
+        return values3;
+    }
 }
