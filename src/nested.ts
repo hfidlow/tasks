@@ -6,7 +6,10 @@ import { Question, QuestionType } from "./interfaces/question";
  * that are `published`.
  */
 export function getPublishedQuestions(questions: Question[]): Question[] {
-    return [];
+    const pubQ = questions.filter(
+        (quest: Question): boolean => quest.published === true
+    );
+    return pubQ;
 }
 
 /**
@@ -15,7 +18,11 @@ export function getPublishedQuestions(questions: Question[]): Question[] {
  * `expected`, and an empty array for its `options`.
  */
 export function getNonEmptyQuestions(questions: Question[]): Question[] {
-    return [];
+    const nonEmptyQ = questions.filter(
+        (quest: Question): boolean =>
+            quest.body !== "" && quest.expected !== "" && quest.options !== []
+    );
+    return nonEmptyQ;
 }
 
 /***
@@ -26,7 +33,12 @@ export function findQuestion(
     questions: Question[],
     id: number
 ): Question | null {
-    return null;
+    const correctID = questions.find((quest: Question): boolean => id === id);
+    if (correctID === undefined) {
+        return null;
+    } else {
+        return correctID;
+    }
 }
 
 /**
@@ -34,7 +46,10 @@ export function findQuestion(
  * with the given `id`.
  */
 export function removeQuestion(questions: Question[], id: number): Question[] {
-    return [];
+    const newQ = questions.filter(
+        (quest: Question): boolean => quest.id !== id
+    );
+    return newQ;
 }
 
 /***
@@ -42,21 +57,31 @@ export function removeQuestion(questions: Question[], id: number): Question[] {
  * questions, as an array.
  */
 export function getNames(questions: Question[]): string[] {
-    return [];
+    const names = questions.map((quest: Question): string => quest.name);
+    return names;
 }
 
 /***
  * Consumes an array of questions and returns the sum total of all their points added together.
  */
 export function sumPoints(questions: Question[]): number {
-    return 0;
+    const pTotal = questions.reduce(
+        (currTot: number, quest: Question) => currTot + quest.points,
+        0
+    );
+    return pTotal;
 }
 
 /***
  * Consumes an array of questions and returns the sum total of the PUBLISHED questions.
  */
 export function sumPublishedPoints(questions: Question[]): number {
-    return 0;
+    const pQuest = getPublishedQuestions(questions);
+    const questTotal = pQuest.reduce(
+        (currTot: number, quest: Question) => currTot + quest.points,
+        0
+    );
+    return questTotal;
 }
 
 /***
@@ -77,7 +102,19 @@ id,name,options,points,published
  * Check the unit tests for more examples!
  */
 export function toCSV(questions: Question[]): string {
-    return "";
+    const qFormat = questions.map(
+        (quest: Question): string =>
+            quest.id +
+            "," +
+            quest.name +
+            "," +
+            quest.options.length +
+            "," +
+            quest.points +
+            "," +
+            quest.published
+    );
+    return "id,name,options,points,published\n" + qFormat.join("\n");
 }
 
 /**
@@ -86,7 +123,15 @@ export function toCSV(questions: Question[]): string {
  * making the `text` an empty string, and using false for both `submitted` and `correct`.
  */
 export function makeAnswers(questions: Question[]): Answer[] {
-    return [];
+    const ans = questions.map(
+        (quest: Question): Answer => ({
+            questionId: quest.id,
+            text: "",
+            submitted: false,
+            correct: false
+        })
+    );
+    return ans;
 }
 
 /***
@@ -94,7 +139,10 @@ export function makeAnswers(questions: Question[]): Answer[] {
  * each question is now published, regardless of its previous published status.
  */
 export function publishAll(questions: Question[]): Question[] {
-    return [];
+    const pubQ = questions.map(
+        (quest: Question): Question => ({ ...quest, published: true })
+    );
+    return pubQ;
 }
 
 /***
@@ -102,7 +150,10 @@ export function publishAll(questions: Question[]): Question[] {
  * are the same type. They can be any type, as long as they are all the SAME type.
  */
 export function sameType(questions: Question[]): boolean {
-    return false;
+    const sameT = questions.every(
+        (quest: Question): boolean => quest.type === "multiple_choice_question"
+    );
+    return sameT;
 }
 
 /***
