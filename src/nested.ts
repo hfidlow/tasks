@@ -1,7 +1,9 @@
-import { urlToHttpOptions } from "url";
+//import { urlToHttpOptions } from "url";
+//import { bookEndList } from "./arrays";
 import { Answer } from "./interfaces/answer";
 import { Question, QuestionType } from "./interfaces/question";
-import { duplicateQuestion, makeBlankQuestion } from "./objects";
+import { makeBlankQuestion } from "./objects";
+//import { duplicateQuestion } from "./objects";
 
 /**
  * Consumes an array of questions and returns a new array with only the questions
@@ -240,8 +242,9 @@ export function editOption(
     targetOptionIndex: number,
     newOption: string
 ) {
+    const newQs = [...questions];
     if (targetOptionIndex === -1) {
-        const newTarget = questions.map(
+        const newTarget = newQs.map(
             (quest: Question): Question =>
                 quest.id === targetId
                     ? { ...quest, options: [...quest.options, newOption] }
@@ -249,13 +252,26 @@ export function editOption(
         );
         return newTarget;
     } else {
-        const newTarget = questions.map(
-            (quest: Question): Question =>
-                quest.id === targetId
-                    ? { ...quest, options: [...quest.options] }
-                    : quest
+        const bigQ2 = newQs.find(
+            (quest: Question): boolean => quest.id === targetId
         );
-        return newTarget;
+        if (bigQ2 !== undefined) {
+            //const bigQ2.options.splice(targetOptionIndex, 1, newOption);
+            const bigQ3 = {
+                ...bigQ2,
+                options: [
+                    ...bigQ2.options.slice(0, targetOptionIndex),
+                    newOption,
+                    ...bigQ2.options.slice(targetOptionIndex + 1)
+                ]
+            };
+            const newTarget = newQs.map(
+                (quest: Question): Question =>
+                    quest.id === targetId ? bigQ3 : quest
+            );
+            return newTarget;
+        }
+        return questions;
     }
 }
 
@@ -273,7 +289,16 @@ export function duplicateQuestionInArray(
     const newQ = questions.find(
         (quest: Question): boolean => quest.id === targetId
     );
-    const newQUp = { ...newQ, id: newId };
-    const quests = questions.splice(targetId, 0, newQUp);
-    return quests;
+    const newInd = questions.findIndex(
+        (quest: Question): boolean => quest.id === targetId
+    );
+    if (newQ !== undefined) {
+        const newQUp = { ...newQ, id: newId, name: "Copy of " + newQ.name };
+        return [
+            ...questions.slice(0, newInd + 1),
+            newQUp,
+            ...questions.slice(newInd + 1)
+        ];
+    }
+    return [...questions];
 }
