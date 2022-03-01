@@ -1,6 +1,12 @@
 import React from "react";
-import { Button, Col, Container, Row } from "react-bootstrap";
+//import { Button, Col, Container, Row } from "react-bootstrap";
 import "./App.css";
+import { ChangeType } from "./components/ChangeType";
+import { RevealAnswer } from "./components/RevealAnswer";
+import { StartAttempt } from "./components/StartAttempt";
+import { TwoDice } from "./components/TwoDice";
+import { CycleHoliday } from "./components/CycleHoliday";
+import { Counter } from "./components/Counter";
 
 function App(): JSX.Element {
     return (
@@ -16,26 +22,20 @@ function App(): JSX.Element {
                     height="200"
                 />
             </header>
-
-            <Container>
-                <Row>
-                    <Col>
-                        <h2>About me:</h2>
-                        <ol>
-                            <li>Senior Mechanical Engineer (CS minor)</li>
-                            <li>Interest in environmental stewardship</li>
-                            <li>Always sleepy!!!</li>
-                        </ol>
-                        <div id="rectangle"></div>
-                    </Col>
-                    <Col>
-                        <Button onClick={() => console.log("Hello World!")}>
-                            Log Hello World
-                        </Button>
-                        <div id="rectangle"></div>
-                    </Col>
-                </Row>
-            </Container>
+            <hr></hr>
+            <Counter></Counter>
+            <hr />
+            Jackie Robinson, the famous baseball player and civil rights
+            pioneer, is the main character of this numerically titled movie.
+            <RevealAnswer></RevealAnswer>
+            <hr />
+            <StartAttempt></StartAttempt>
+            <hr />
+            <TwoDice></TwoDice>
+            <hr />
+            <ChangeType></ChangeType>
+            <hr />
+            <CycleHoliday></CycleHoliday>
         </div>
     );
 }
