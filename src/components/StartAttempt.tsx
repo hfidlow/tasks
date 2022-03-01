@@ -29,6 +29,9 @@ export function StartAttempt(): JSX.Element {
             <Button onClick={mulligan} disabled={progress}>
                 Mulligan
             </Button>
+            <p>
+                <span> Attempts left: {attempts}</span>
+            </p>
         </div>
     );
 }
