@@ -25,6 +25,8 @@ function App(): JSX.Element {
             <hr></hr>
             <Counter></Counter>
             <hr />
+            Jackie Robinson, the famous baseball player and civil rights
+            pioneer, is the main character of this numerically titled movie.
             <RevealAnswer></RevealAnswer>
             <hr />
             <StartAttempt></StartAttempt>
