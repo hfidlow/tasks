@@ -8,8 +8,8 @@ type ChangeEvent = React.ChangeEvent<
 >;
 
 export function GiveAttempts(): JSX.Element {
-    const [attempts, setAttempts] = useState<number>(4);
-    const [requested, setRequested] = useState<number>(1);
+    const [attempts, setAttempts] = useState<number>(3);
+    const [requested, setRequested] = useState<number>(0);
 
     function updateRequested(event: ChangeEvent) {
         const numRequested = parseInt(event.target.value)
@@ -30,6 +30,7 @@ export function GiveAttempts(): JSX.Element {
                     <Form.Control
                         value={requested}
                         onChange={updateRequested}
+                        role="spinbutton"
                     ></Form.Control>
                 </Col>
             </Form.Group>

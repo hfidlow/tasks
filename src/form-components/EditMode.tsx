@@ -9,30 +9,32 @@ export function EditMode(): JSX.Element {
     return (
         <div>
             <h3>Edit Mode</h3>
-            <Form.Group>
-                <Form.Label>Enter your name.</Form.Label>
-                <Form.Control
-                    value={name}
-                    onChange={(e) => setName(e.target.value)}
-                    disabled={!edit}
-                ></Form.Control>
-            </Form.Group>
-
             <Form.Check
+                inline
                 type="switch"
                 id="in-edit"
                 label="Edit Mode"
                 checked={edit}
                 onChange={(e) => setEdit(e.target.checked)}
             />
+            <Form.Group>
+                <Form.Label> Enter your name.</Form.Label>
+                <Form.Control
+                    value={name}
+                    onChange={(e) => setName(e.target.value)}
+                    hidden={!edit}
+                ></Form.Control>
+            </Form.Group>
             <Form.Check
+                inline
                 type="switch"
                 id="is-student"
-                label="Student"
+                label="Are you a student?"
                 checked={student}
                 onChange={(e) => setStudent(e.target.checked)}
-                disabled={!edit}
+                hidden={!edit}
             />
+
             <div>
                 {student
                     ? [name + " is a student"]
