@@ -10,6 +10,17 @@ import img4 from "./Images/img4.png";
 function App(): JSX.Element {
     return (
         <div className="App">
+            <header className="App-header">
+                <span style={{ color: "yellow" }}>
+                    Henry Fidlow UD CISC275 with React Hooks and TypeScript
+                </span>
+                <img
+                    src="https://i.pinimg.com/originals/c2/18/a0/c218a0dd7c4829d03d1e89cb824f3459.jpg"
+                    alt="Objectively the best snack"
+                    width="200"
+                    height="200"
+                />
+            </header>
             <ShowHideTasks></ShowHideTasks>
             <div>
                 <img src={img1} alt="img1" width={300} height={380} />
