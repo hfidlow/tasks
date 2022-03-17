@@ -1,9 +1,14 @@
 .App {
     text-align: center;
     background-color: #add8e6;
+    width: 100%;
+    justify-content: center;
+}
+
+.App-text1 {
+    text-align: left;
     width: 95%;
     margin-left: 2.5%;
-    justify-content: center;
 }
 
 .App-logo {
