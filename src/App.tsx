@@ -5,10 +5,10 @@ import "./App.css";
 import startQuizzes from "./quizzer/Data/starting_quizzes.json";
 import { Quiz } from "./quizzer/Interfaces/quizzes";
 import { ShowHideTasks } from "./ShowHide";
-// import img1 from "./Images/img1.png";
-// import img2 from "./Images/img2.png";
-// import img3 from "./Images/img3.png";
-// import img4 from "./Images/img4.png";
+import img1 from "./Images/img1.png";
+import img2 from "./Images/img2.png";
+import img3 from "./Images/img3.png";
+import img4 from "./Images/img4.png";
 
 //const QUIZZES = startQuizzes.map((quiz): Quiz => ({ ...quiz }));
 
@@ -37,12 +37,12 @@ function App(): JSX.Element {
                 />
             </header>
             <ShowHideTasks></ShowHideTasks>
-            {/* <div>
+            <div>
                 <img src={img1} alt="img1" width={300} height={380} />
                 <img src={img2} alt="img2" width={300} height={380} />
                 <img src={img3} alt="img3" width={300} height={380} />
                 <img src={img4} alt="img4" width={300} height={380} />
-            </div> */}
+            </div>
             <div className="App-text1">
                 Requirements:
                 <li> Added sketches ✔️</li>
