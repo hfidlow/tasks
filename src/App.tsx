@@ -17,6 +17,10 @@ function App(): JSX.Element {
     const [edit, setEdit] = useState<boolean>(false);
     const [quizzes, setQuizzes] = useState<Quiz[]>(QUIZZES);
 
+    function deleteQuiz(id: number) {
+        setQuizzes(quizzes.filter((quiz: Quiz): boolean => quiz.id !== id));
+    }
+
     return (
         <div className="App">
             <header className="App-header">
@@ -39,7 +43,11 @@ function App(): JSX.Element {
                 />
             </header>
             <div>
-                <QuizList quizzes={quizzes}></QuizList>
+                <QuizList
+                    quizzes={quizzes}
+                    edit={edit}
+                    deleteQuiz={deleteQuiz}
+                ></QuizList>
             </div>
             <ShowHideTasks></ShowHideTasks>
             <div>
@@ -64,7 +72,7 @@ function App(): JSX.Element {
                 <li> Delete Questions ❌</li>
                 <li> Reorder Questions ❌</li>
                 <li> Add Quizzes ❌</li>
-                <li> Delete Quizzes ❌</li>
+                <li> Delete Quizzes ✔️</li>
             </div>
         </div>
     );

@@ -4,7 +4,15 @@ import { Button, Container, Row } from "react-bootstrap";
 import { Quiz } from "../Interfaces/quizzes";
 import { QuestionList } from "./QuestionList";
 
-export function QuizView({ quiz }: { quiz: Quiz }): JSX.Element {
+export function QuizView({
+    quiz,
+    edit,
+    deleteQuiz
+}: {
+    quiz: Quiz;
+    edit: boolean;
+    deleteQuiz: (id: number) => void;
+}): JSX.Element {
     const [selected, setSelected] = useState<boolean>(false);
 
     function updateSelected() {
@@ -27,6 +35,11 @@ export function QuizView({ quiz }: { quiz: Quiz }): JSX.Element {
                     <Button onClick={updateSelected} hidden={selected}>
                         Select
                     </Button>
+                </div>
+            </Row>
+            <Row>
+                <div hidden={!edit}>
+                    <Button onClick={() => deleteQuiz(quiz.id)}>Delete</Button>
                 </div>
             </Row>
         </Container>
