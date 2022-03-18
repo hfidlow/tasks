@@ -4,43 +4,47 @@
         "title": "Math",
         "list": [
             {
-                "id": 1000,
+                "idQuest": 1,
                 "name": "Simple Addition 1",
                 "body": "What is 7+19?",
                 "type": "short_answer_question",
                 "answer": "26",
-                "options": null,
+                "options": [],
                 "points": 2,
+                "correct": false,
                 "published": true
             },
             {
-                "id": 1001,
+                "idQuest": 2,
                 "name": "Simple Addition 2",
                 "body": "What is 14+22?",
                 "type": "short_answer_question",
                 "answer": "36",
-                "options": null,
+                "options": [],
                 "points": 2,
+                "correct": false,
                 "published": true
             },
             {
-                "id": 1002,
+                "idQuest": 3,
                 "name": "Simple Multiplication 1",
                 "body": "What is 9*7?",
                 "type": "short_answer_question",
                 "answer": "63",
-                "options": null,
+                "options": [],
                 "points": 2,
+                "correct": false,
                 "published": true
             },
             {
-                "id": 1003,
+                "idQuest": 4,
                 "name": "Simple Multiplication 2",
                 "body": "What is 14*7?",
                 "type": "short_answer_question",
                 "answer": "98",
-                "options": null,
+                "options": [],
                 "points": 2,
+                "correct": false,
                 "published": false
             }
         ],
@@ -52,7 +56,7 @@
         "title": "American History",
         "list": [
             {
-                "id": 2000,
+                "idQuest": 1,
                 "name": "Presidents 1",
                 "body": "Who was the 3rd president of the United States of America?",
                 "type": "multiple_choice_question",
@@ -64,11 +68,12 @@
                     "Andrew Jackson"
                 ],
                 "points": 2,
+                "correct": false,
                 "published": true
             },
             {
-                "id": 2001,
-                "name": "Presidents 1",
+                "idQuest": 2,
+                "name": "Presidents 2",
                 "body": "Which president served the shortest term?",
                 "type": "multiple_choice_question",
                 "answer": "William Henry Harrison",
@@ -80,20 +85,22 @@
                     "John F. Kennedy"
                 ],
                 "points": 2,
+                "correct": false,
                 "published": true
             },
             {
-                "id": 2002,
+                "idQuest": 3,
                 "name": "Legislation 1",
                 "body": "When was the Constitution signed?",
                 "type": "multiple_choice_question",
                 "answer": "1787",
                 "options": ["1776", "1778", "1783", "1787"],
                 "points": 2,
+                "correct": false,
                 "published": true
             },
             {
-                "id": 2003,
+                "idQuest": 4,
                 "name": "Government 1",
                 "body": "Which of these is not a branch of government?",
                 "type": "multiple_choice_question",
@@ -105,6 +112,7 @@
                     "Judicial"
                 ],
                 "points": 2,
+                "correct": false,
                 "published": true
             }
         ],
@@ -116,33 +124,36 @@
         "title": "Potpourri",
         "list": [
             {
-                "id": 3000,
+                "idQuest": 1,
                 "name": "Animals 1",
                 "body": "What marine animal holds the record for fastest swimmer?",
                 "type": "multiple_choice_question",
                 "answer": "Sailfish",
                 "options": ["Bluefin Tuna", "Marlin", "Sailfish", "Wahoo"],
                 "points": 3,
+                "correct": false,
                 "published": true
             },
             {
-                "id": 3001,
+                "idQuest": 2,
                 "name": "Animals 2",
                 "body": "Which of these mammals is an egg laying species?",
                 "type": "multiple_choice_question",
                 "answer": "Platypus",
                 "options": ["Raccoon", "Squirrel", "Platypus", "Otter"],
                 "points": 3,
+                "correct": false,
                 "published": true
             },
             {
-                "id": 3002,
+                "idQuest": 3,
                 "name": "Science 1",
                 "body": "This form of power is the greatest energy generation source in the US today?",
                 "type": "multiple_choice_question",
                 "answer": "Natural Gas",
                 "options": ["Natural Gas", "Coal", "Nuclear", "Wind+Solar"],
                 "points": 3,
+                "correct": false,
                 "published": true
             }
         ],
