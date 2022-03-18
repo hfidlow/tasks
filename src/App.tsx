@@ -2,18 +2,20 @@ import React, { useState } from "react";
 import { Form } from "react-bootstrap";
 //import { Button, Col, Container, Row } from "react-bootstrap";
 import "./App.css";
-//import startQuizzes from "./quizzer/Data/starting_quizzes.json";
-//import { Quiz } from "./quizzer/Interfaces/quizzes";
+import startQuizzes from "./quizzer/Data/starting_quizzes.json";
+import { Quiz } from "./quizzer/Interfaces/quizzes";
 import { ShowHideTasks } from "./ShowHide";
+import { QuizList } from "./quizzer/Components/QuizList";
 import img1 from "./Images/img1.png";
 import img2 from "./Images/img2.png";
 import img3 from "./Images/img3.png";
 import img4 from "./Images/img4.png";
 
-//const QUIZZES = startQuizzes.map((quiz): Quiz => ({ ...quiz }));
+const QUIZZES = startQuizzes.map((quiz): Quiz => quiz as Quiz);
 
 function App(): JSX.Element {
     const [edit, setEdit] = useState<boolean>(false);
+    const [quizzes, setQuizzes] = useState<Quiz[]>(QUIZZES);
 
     return (
         <div className="App">
@@ -36,6 +38,9 @@ function App(): JSX.Element {
                     onChange={(e) => setEdit(e.target.checked)}
                 />
             </header>
+            <div>
+                <QuizList quizzes={quizzes}></QuizList>
+            </div>
             <ShowHideTasks></ShowHideTasks>
             <div>
                 <img src={img1} alt="img1" width={300} height={380} />
@@ -46,10 +51,10 @@ function App(): JSX.Element {
             <div className="App-text1">
                 Requirements:
                 <li> Added sketches ✔️</li>
-                <li> Visible Quizzes ❌</li>
-                <li> Questions in Quizzes ❌</li>
-                <li> Short answer and Multiple Choice ❌</li>
-                <li> Check correctness ❌</li>
+                <li> Visible Quizzes ✔️</li>
+                <li> Questions in Quizzes ✔️</li>
+                <li> Short answer and Multiple Choice ✔️</li>
+                <li> Check correctness ✔️</li>
                 <li> Sum points ❌</li>
                 <li> Clear Answers ❌</li>
                 <li> Publish Questions ❌</li>

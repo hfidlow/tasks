@@ -9,8 +9,9 @@
                 "body": "What is 7+19?",
                 "type": "short_answer_question",
                 "answer": "26",
-                "options": null,
+                "options": [],
                 "points": 2,
+                "correct": false,
                 "published": true
             },
             {
@@ -19,8 +20,9 @@
                 "body": "What is 14+22?",
                 "type": "short_answer_question",
                 "answer": "36",
-                "options": null,
+                "options": [],
                 "points": 2,
+                "correct": false,
                 "published": true
             },
             {
@@ -29,8 +31,9 @@
                 "body": "What is 9*7?",
                 "type": "short_answer_question",
                 "answer": "63",
-                "options": null,
+                "options": [],
                 "points": 2,
+                "correct": false,
                 "published": true
             },
             {
@@ -39,8 +42,9 @@
                 "body": "What is 14*7?",
                 "type": "short_answer_question",
                 "answer": "98",
-                "options": null,
+                "options": [],
                 "points": 2,
+                "correct": false,
                 "published": false
             }
         ],
@@ -64,11 +68,12 @@
                     "Andrew Jackson"
                 ],
                 "points": 2,
+                "correct": false,
                 "published": true
             },
             {
                 "id": 2001,
-                "name": "Presidents 1",
+                "name": "Presidents 2",
                 "body": "Which president served the shortest term?",
                 "type": "multiple_choice_question",
                 "answer": "William Henry Harrison",
@@ -80,6 +85,7 @@
                     "John F. Kennedy"
                 ],
                 "points": 2,
+                "correct": false,
                 "published": true
             },
             {
@@ -90,6 +96,7 @@
                 "answer": "1787",
                 "options": ["1776", "1778", "1783", "1787"],
                 "points": 2,
+                "correct": false,
                 "published": true
             },
             {
@@ -105,6 +112,7 @@
                     "Judicial"
                 ],
                 "points": 2,
+                "correct": false,
                 "published": true
             }
         ],
@@ -123,6 +131,7 @@
                 "answer": "Sailfish",
                 "options": ["Bluefin Tuna", "Marlin", "Sailfish", "Wahoo"],
                 "points": 3,
+                "correct": false,
                 "published": true
             },
             {
@@ -133,6 +142,7 @@
                 "answer": "Platypus",
                 "options": ["Raccoon", "Squirrel", "Platypus", "Otter"],
                 "points": 3,
+                "correct": false,
                 "published": true
             },
             {
@@ -143,6 +153,7 @@
                 "answer": "Natural Gas",
                 "options": ["Natural Gas", "Coal", "Nuclear", "Wind+Solar"],
                 "points": 3,
+                "correct": false,
                 "published": true
             }
         ],
