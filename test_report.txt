@@ -23,12 +23,762 @@ PASS src/bad-components/ColoredBox.test.tsx
 PASS src/bad-components/ShoveBox.test.tsx
 PASS src/quizzer/Quizzer.test.tsx
 PASS src/App.test.tsx
+  ● Console
+
+    console.error
+      Warning: Encountered two children with the same key, `1`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version.
+          at div
+          at /home/runner/work/tasks/tasks/node_modules/react-bootstrap/cjs/Row.js:22:3
+          at div
+          at /home/runner/work/tasks/tasks/node_modules/react-bootstrap/cjs/Container.js:24:3
+          at QuestionView (/home/runner/work/tasks/tasks/src/quizzer/Components/QuestionView.tsx:11:5)
+          at div
+          at div
+          at /home/runner/work/tasks/tasks/node_modules/react-bootstrap/cjs/Stack.js:23:7
+          at QuestionList (/home/runner/work/tasks/tasks/src/quizzer/Components/QuestionList.tsx:7:5)
+          at div
+          at div
+          at /home/runner/work/tasks/tasks/node_modules/react-bootstrap/cjs/Row.js:22:3
+          at div
+          at /home/runner/work/tasks/tasks/node_modules/react-bootstrap/cjs/Container.js:24:3
+          at QuizView (/home/runner/work/tasks/tasks/src/quizzer/Components/QuizView.tsx:8:5)
+          at div
+          at div
+          at /home/runner/work/tasks/tasks/node_modules/react-bootstrap/cjs/Stack.js:23:7
+          at QuizList (/home/runner/work/tasks/tasks/src/quizzer/Components/QuizList.tsx:7:5)
+          at div
+          at div
+          at App (/home/runner/work/tasks/tasks/src/App.tsx:17:29)
+
+      at printWarning (node_modules/react-dom/cjs/react-dom.development.js:67:30)
+      at error (node_modules/react-dom/cjs/react-dom.development.js:43:5)
+      at warnOnInvalidKey (node_modules/react-dom/cjs/react-dom.development.js:13620:11)
+      at reconcileChildrenArray (node_modules/react-dom/cjs/react-dom.development.js:13651:21)
+      at reconcileChildFibers (node_modules/react-dom/cjs/react-dom.development.js:14125:14)
+      at reconcileChildren (node_modules/react-dom/cjs/react-dom.development.js:16990:28)
+      at updateHostComponent (node_modules/react-dom/cjs/react-dom.development.js:17632:3)
+      at beginWork (node_modules/react-dom/cjs/react-dom.development.js:19080:14)
+
+    console.error
+      Warning: Encountered two children with the same key, `1`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version.
+          at div
+          at /home/runner/work/tasks/tasks/node_modules/react-bootstrap/cjs/Row.js:22:3
+          at div
+          at /home/runner/work/tasks/tasks/node_modules/react-bootstrap/cjs/Container.js:24:3
+          at QuestionView (/home/runner/work/tasks/tasks/src/quizzer/Components/QuestionView.tsx:11:5)
+          at div
+          at div
+          at /home/runner/work/tasks/tasks/node_modules/react-bootstrap/cjs/Stack.js:23:7
+          at QuestionList (/home/runner/work/tasks/tasks/src/quizzer/Components/QuestionList.tsx:7:5)
+          at div
+          at div
+          at /home/runner/work/tasks/tasks/node_modules/react-bootstrap/cjs/Row.js:22:3
+          at div
+          at /home/runner/work/tasks/tasks/node_modules/react-bootstrap/cjs/Container.js:24:3
+          at QuizView (/home/runner/work/tasks/tasks/src/quizzer/Components/QuizView.tsx:8:5)
+          at div
+          at div
+          at /home/runner/work/tasks/tasks/node_modules/react-bootstrap/cjs/Stack.js:23:7
+          at QuizList (/home/runner/work/tasks/tasks/src/quizzer/Components/QuizList.tsx:7:5)
+          at div
+          at div
+          at App (/home/runner/work/tasks/tasks/src/App.tsx:17:29)
+
+      at printWarning (node_modules/react-dom/cjs/react-dom.development.js:67:30)
+      at error (node_modules/react-dom/cjs/react-dom.development.js:43:5)
+      at warnOnInvalidKey (node_modules/react-dom/cjs/react-dom.development.js:13620:11)
+      at reconcileChildrenArray (node_modules/react-dom/cjs/react-dom.development.js:13651:21)
+      at reconcileChildFibers (node_modules/react-dom/cjs/react-dom.development.js:14125:14)
+      at reconcileChildren (node_modules/react-dom/cjs/react-dom.development.js:16990:28)
+      at updateHostComponent (node_modules/react-dom/cjs/react-dom.development.js:17632:3)
+      at beginWork (node_modules/react-dom/cjs/react-dom.development.js:19080:14)
+
+    console.error
+      Warning: Encountered two children with the same key, `1`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version.
+          at div
+          at /home/runner/work/tasks/tasks/node_modules/react-bootstrap/cjs/Row.js:22:3
+          at div
+          at /home/runner/work/tasks/tasks/node_modules/react-bootstrap/cjs/Container.js:24:3
+          at QuestionView (/home/runner/work/tasks/tasks/src/quizzer/Components/QuestionView.tsx:11:5)
+          at div
+          at div
+          at /home/runner/work/tasks/tasks/node_modules/react-bootstrap/cjs/Stack.js:23:7
+          at QuestionList (/home/runner/work/tasks/tasks/src/quizzer/Components/QuestionList.tsx:7:5)
+          at div
+          at div
+          at /home/runner/work/tasks/tasks/node_modules/react-bootstrap/cjs/Row.js:22:3
+          at div
+          at /home/runner/work/tasks/tasks/node_modules/react-bootstrap/cjs/Container.js:24:3
+          at QuizView (/home/runner/work/tasks/tasks/src/quizzer/Components/QuizView.tsx:8:5)
+          at div
+          at div
+          at /home/runner/work/tasks/tasks/node_modules/react-bootstrap/cjs/Stack.js:23:7
+          at QuizList (/home/runner/work/tasks/tasks/src/quizzer/Components/QuizList.tsx:7:5)
+          at div
+          at div
+          at App (/home/runner/work/tasks/tasks/src/App.tsx:17:29)
+
+      at printWarning (node_modules/react-dom/cjs/react-dom.development.js:67:30)
+      at error (node_modules/react-dom/cjs/react-dom.development.js:43:5)
+      at warnOnInvalidKey (node_modules/react-dom/cjs/react-dom.development.js:13620:11)
+      at reconcileChildrenArray (node_modules/react-dom/cjs/react-dom.development.js:13651:21)
+      at reconcileChildFibers (node_modules/react-dom/cjs/react-dom.development.js:14125:14)
+      at reconcileChildren (node_modules/react-dom/cjs/react-dom.development.js:16990:28)
+      at updateHostComponent (node_modules/react-dom/cjs/react-dom.development.js:17632:3)
+      at beginWork (node_modules/react-dom/cjs/react-dom.development.js:19080:14)
+
+    console.error
+      Warning: Encountered two children with the same key, `2`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version.
+          at div
+          at /home/runner/work/tasks/tasks/node_modules/react-bootstrap/cjs/Row.js:22:3
+          at div
+          at /home/runner/work/tasks/tasks/node_modules/react-bootstrap/cjs/Container.js:24:3
+          at QuestionView (/home/runner/work/tasks/tasks/src/quizzer/Components/QuestionView.tsx:11:5)
+          at div
+          at div
+          at /home/runner/work/tasks/tasks/node_modules/react-bootstrap/cjs/Stack.js:23:7
+          at QuestionList (/home/runner/work/tasks/tasks/src/quizzer/Components/QuestionList.tsx:7:5)
+          at div
+          at div
+          at /home/runner/work/tasks/tasks/node_modules/react-bootstrap/cjs/Row.js:22:3
+          at div
+          at /home/runner/work/tasks/tasks/node_modules/react-bootstrap/cjs/Container.js:24:3
+          at QuizView (/home/runner/work/tasks/tasks/src/quizzer/Components/QuizView.tsx:8:5)
+          at div
+          at div
+          at /home/runner/work/tasks/tasks/node_modules/react-bootstrap/cjs/Stack.js:23:7
+          at QuizList (/home/runner/work/tasks/tasks/src/quizzer/Components/QuizList.tsx:7:5)
+          at div
+          at div
+          at App (/home/runner/work/tasks/tasks/src/App.tsx:17:29)
+
+      at printWarning (node_modules/react-dom/cjs/react-dom.development.js:67:30)
+      at error (node_modules/react-dom/cjs/react-dom.development.js:43:5)
+      at warnOnInvalidKey (node_modules/react-dom/cjs/react-dom.development.js:13620:11)
+      at reconcileChildrenArray (node_modules/react-dom/cjs/react-dom.development.js:13651:21)
+      at reconcileChildFibers (node_modules/react-dom/cjs/react-dom.development.js:14125:14)
+      at reconcileChildren (node_modules/react-dom/cjs/react-dom.development.js:16990:28)
+      at updateHostComponent (node_modules/react-dom/cjs/react-dom.development.js:17632:3)
+      at beginWork (node_modules/react-dom/cjs/react-dom.development.js:19080:14)
+
+    console.error
+      Warning: Encountered two children with the same key, `2`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version.
+          at div
+          at /home/runner/work/tasks/tasks/node_modules/react-bootstrap/cjs/Row.js:22:3
+          at div
+          at /home/runner/work/tasks/tasks/node_modules/react-bootstrap/cjs/Container.js:24:3
+          at QuestionView (/home/runner/work/tasks/tasks/src/quizzer/Components/QuestionView.tsx:11:5)
+          at div
+          at div
+          at /home/runner/work/tasks/tasks/node_modules/react-bootstrap/cjs/Stack.js:23:7
+          at QuestionList (/home/runner/work/tasks/tasks/src/quizzer/Components/QuestionList.tsx:7:5)
+          at div
+          at div
+          at /home/runner/work/tasks/tasks/node_modules/react-bootstrap/cjs/Row.js:22:3
+          at div
+          at /home/runner/work/tasks/tasks/node_modules/react-bootstrap/cjs/Container.js:24:3
+          at QuizView (/home/runner/work/tasks/tasks/src/quizzer/Components/QuizView.tsx:8:5)
+          at div
+          at div
+          at /home/runner/work/tasks/tasks/node_modules/react-bootstrap/cjs/Stack.js:23:7
+          at QuizList (/home/runner/work/tasks/tasks/src/quizzer/Components/QuizList.tsx:7:5)
+          at div
+          at div
+          at App (/home/runner/work/tasks/tasks/src/App.tsx:17:29)
+
+      at printWarning (node_modules/react-dom/cjs/react-dom.development.js:67:30)
+      at error (node_modules/react-dom/cjs/react-dom.development.js:43:5)
+      at warnOnInvalidKey (node_modules/react-dom/cjs/react-dom.development.js:13620:11)
+      at reconcileChildrenArray (node_modules/react-dom/cjs/react-dom.development.js:13651:21)
+      at reconcileChildFibers (node_modules/react-dom/cjs/react-dom.development.js:14125:14)
+      at reconcileChildren (node_modules/react-dom/cjs/react-dom.development.js:16990:28)
+      at updateHostComponent (node_modules/react-dom/cjs/react-dom.development.js:17632:3)
+      at beginWork (node_modules/react-dom/cjs/react-dom.development.js:19080:14)
+
+    console.error
+      Warning: Encountered two children with the same key, `2`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version.
+          at div
+          at /home/runner/work/tasks/tasks/node_modules/react-bootstrap/cjs/Row.js:22:3
+          at div
+          at /home/runner/work/tasks/tasks/node_modules/react-bootstrap/cjs/Container.js:24:3
+          at QuestionView (/home/runner/work/tasks/tasks/src/quizzer/Components/QuestionView.tsx:11:5)
+          at div
+          at div
+          at /home/runner/work/tasks/tasks/node_modules/react-bootstrap/cjs/Stack.js:23:7
+          at QuestionList (/home/runner/work/tasks/tasks/src/quizzer/Components/QuestionList.tsx:7:5)
+          at div
+          at div
+          at /home/runner/work/tasks/tasks/node_modules/react-bootstrap/cjs/Row.js:22:3
+          at div
+          at /home/runner/work/tasks/tasks/node_modules/react-bootstrap/cjs/Container.js:24:3
+          at QuizView (/home/runner/work/tasks/tasks/src/quizzer/Components/QuizView.tsx:8:5)
+          at div
+          at div
+          at /home/runner/work/tasks/tasks/node_modules/react-bootstrap/cjs/Stack.js:23:7
+          at QuizList (/home/runner/work/tasks/tasks/src/quizzer/Components/QuizList.tsx:7:5)
+          at div
+          at div
+          at App (/home/runner/work/tasks/tasks/src/App.tsx:17:29)
+
+      at printWarning (node_modules/react-dom/cjs/react-dom.development.js:67:30)
+      at error (node_modules/react-dom/cjs/react-dom.development.js:43:5)
+      at warnOnInvalidKey (node_modules/react-dom/cjs/react-dom.development.js:13620:11)
+      at reconcileChildrenArray (node_modules/react-dom/cjs/react-dom.development.js:13651:21)
+      at reconcileChildFibers (node_modules/react-dom/cjs/react-dom.development.js:14125:14)
+      at reconcileChildren (node_modules/react-dom/cjs/react-dom.development.js:16990:28)
+      at updateHostComponent (node_modules/react-dom/cjs/react-dom.development.js:17632:3)
+      at beginWork (node_modules/react-dom/cjs/react-dom.development.js:19080:14)
+
+    console.error
+      Warning: Encountered two children with the same key, `2`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version.
+          at div
+          at /home/runner/work/tasks/tasks/node_modules/react-bootstrap/cjs/Row.js:22:3
+          at div
+          at /home/runner/work/tasks/tasks/node_modules/react-bootstrap/cjs/Container.js:24:3
+          at QuestionView (/home/runner/work/tasks/tasks/src/quizzer/Components/QuestionView.tsx:11:5)
+          at div
+          at div
+          at /home/runner/work/tasks/tasks/node_modules/react-bootstrap/cjs/Stack.js:23:7
+          at QuestionList (/home/runner/work/tasks/tasks/src/quizzer/Components/QuestionList.tsx:7:5)
+          at div
+          at div
+          at /home/runner/work/tasks/tasks/node_modules/react-bootstrap/cjs/Row.js:22:3
+          at div
+          at /home/runner/work/tasks/tasks/node_modules/react-bootstrap/cjs/Container.js:24:3
+          at QuizView (/home/runner/work/tasks/tasks/src/quizzer/Components/QuizView.tsx:8:5)
+          at div
+          at div
+          at /home/runner/work/tasks/tasks/node_modules/react-bootstrap/cjs/Stack.js:23:7
+          at QuizList (/home/runner/work/tasks/tasks/src/quizzer/Components/QuizList.tsx:7:5)
+          at div
+          at div
+          at App (/home/runner/work/tasks/tasks/src/App.tsx:17:29)
+
+      at printWarning (node_modules/react-dom/cjs/react-dom.development.js:67:30)
+      at error (node_modules/react-dom/cjs/react-dom.development.js:43:5)
+      at warnOnInvalidKey (node_modules/react-dom/cjs/react-dom.development.js:13620:11)
+      at reconcileChildrenArray (node_modules/react-dom/cjs/react-dom.development.js:13651:21)
+      at reconcileChildFibers (node_modules/react-dom/cjs/react-dom.development.js:14125:14)
+      at reconcileChildren (node_modules/react-dom/cjs/react-dom.development.js:16990:28)
+      at updateHostComponent (node_modules/react-dom/cjs/react-dom.development.js:17632:3)
+      at beginWork (node_modules/react-dom/cjs/react-dom.development.js:19080:14)
+
+    console.error
+      Warning: Encountered two children with the same key, `3`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version.
+          at div
+          at /home/runner/work/tasks/tasks/node_modules/react-bootstrap/cjs/Row.js:22:3
+          at div
+          at /home/runner/work/tasks/tasks/node_modules/react-bootstrap/cjs/Container.js:24:3
+          at QuestionView (/home/runner/work/tasks/tasks/src/quizzer/Components/QuestionView.tsx:11:5)
+          at div
+          at div
+          at /home/runner/work/tasks/tasks/node_modules/react-bootstrap/cjs/Stack.js:23:7
+          at QuestionList (/home/runner/work/tasks/tasks/src/quizzer/Components/QuestionList.tsx:7:5)
+          at div
+          at div
+          at /home/runner/work/tasks/tasks/node_modules/react-bootstrap/cjs/Row.js:22:3
+          at div
+          at /home/runner/work/tasks/tasks/node_modules/react-bootstrap/cjs/Container.js:24:3
+          at QuizView (/home/runner/work/tasks/tasks/src/quizzer/Components/QuizView.tsx:8:5)
+          at div
+          at div
+          at /home/runner/work/tasks/tasks/node_modules/react-bootstrap/cjs/Stack.js:23:7
+          at QuizList (/home/runner/work/tasks/tasks/src/quizzer/Components/QuizList.tsx:7:5)
+          at div
+          at div
+          at App (/home/runner/work/tasks/tasks/src/App.tsx:17:29)
+
+      at printWarning (node_modules/react-dom/cjs/react-dom.development.js:67:30)
+      at error (node_modules/react-dom/cjs/react-dom.development.js:43:5)
+      at warnOnInvalidKey (node_modules/react-dom/cjs/react-dom.development.js:13620:11)
+      at reconcileChildrenArray (node_modules/react-dom/cjs/react-dom.development.js:13651:21)
+      at reconcileChildFibers (node_modules/react-dom/cjs/react-dom.development.js:14125:14)
+      at reconcileChildren (node_modules/react-dom/cjs/react-dom.development.js:16990:28)
+      at updateHostComponent (node_modules/react-dom/cjs/react-dom.development.js:17632:3)
+      at beginWork (node_modules/react-dom/cjs/react-dom.development.js:19080:14)
+
+    console.error
+      Warning: Encountered two children with the same key, `3`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version.
+          at div
+          at /home/runner/work/tasks/tasks/node_modules/react-bootstrap/cjs/Row.js:22:3
+          at div
+          at /home/runner/work/tasks/tasks/node_modules/react-bootstrap/cjs/Container.js:24:3
+          at QuestionView (/home/runner/work/tasks/tasks/src/quizzer/Components/QuestionView.tsx:11:5)
+          at div
+          at div
+          at /home/runner/work/tasks/tasks/node_modules/react-bootstrap/cjs/Stack.js:23:7
+          at QuestionList (/home/runner/work/tasks/tasks/src/quizzer/Components/QuestionList.tsx:7:5)
+          at div
+          at div
+          at /home/runner/work/tasks/tasks/node_modules/react-bootstrap/cjs/Row.js:22:3
+          at div
+          at /home/runner/work/tasks/tasks/node_modules/react-bootstrap/cjs/Container.js:24:3
+          at QuizView (/home/runner/work/tasks/tasks/src/quizzer/Components/QuizView.tsx:8:5)
+          at div
+          at div
+          at /home/runner/work/tasks/tasks/node_modules/react-bootstrap/cjs/Stack.js:23:7
+          at QuizList (/home/runner/work/tasks/tasks/src/quizzer/Components/QuizList.tsx:7:5)
+          at div
+          at div
+          at App (/home/runner/work/tasks/tasks/src/App.tsx:17:29)
+
+      at printWarning (node_modules/react-dom/cjs/react-dom.development.js:67:30)
+      at error (node_modules/react-dom/cjs/react-dom.development.js:43:5)
+      at warnOnInvalidKey (node_modules/react-dom/cjs/react-dom.development.js:13620:11)
+      at reconcileChildrenArray (node_modules/react-dom/cjs/react-dom.development.js:13651:21)
+      at reconcileChildFibers (node_modules/react-dom/cjs/react-dom.development.js:14125:14)
+      at reconcileChildren (node_modules/react-dom/cjs/react-dom.development.js:16990:28)
+      at updateHostComponent (node_modules/react-dom/cjs/react-dom.development.js:17632:3)
+      at beginWork (node_modules/react-dom/cjs/react-dom.development.js:19080:14)
+
+    console.error
+      Warning: Encountered two children with the same key, `3`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version.
+          at div
+          at /home/runner/work/tasks/tasks/node_modules/react-bootstrap/cjs/Row.js:22:3
+          at div
+          at /home/runner/work/tasks/tasks/node_modules/react-bootstrap/cjs/Container.js:24:3
+          at QuestionView (/home/runner/work/tasks/tasks/src/quizzer/Components/QuestionView.tsx:11:5)
+          at div
+          at div
+          at /home/runner/work/tasks/tasks/node_modules/react-bootstrap/cjs/Stack.js:23:7
+          at QuestionList (/home/runner/work/tasks/tasks/src/quizzer/Components/QuestionList.tsx:7:5)
+          at div
+          at div
+          at /home/runner/work/tasks/tasks/node_modules/react-bootstrap/cjs/Row.js:22:3
+          at div
+          at /home/runner/work/tasks/tasks/node_modules/react-bootstrap/cjs/Container.js:24:3
+          at QuizView (/home/runner/work/tasks/tasks/src/quizzer/Components/QuizView.tsx:8:5)
+          at div
+          at div
+          at /home/runner/work/tasks/tasks/node_modules/react-bootstrap/cjs/Stack.js:23:7
+          at QuizList (/home/runner/work/tasks/tasks/src/quizzer/Components/QuizList.tsx:7:5)
+          at div
+          at div
+          at App (/home/runner/work/tasks/tasks/src/App.tsx:17:29)
+
+      at printWarning (node_modules/react-dom/cjs/react-dom.development.js:67:30)
+      at error (node_modules/react-dom/cjs/react-dom.development.js:43:5)
+      at warnOnInvalidKey (node_modules/react-dom/cjs/react-dom.development.js:13620:11)
+      at reconcileChildrenArray (node_modules/react-dom/cjs/react-dom.development.js:13651:21)
+      at reconcileChildFibers (node_modules/react-dom/cjs/react-dom.development.js:14125:14)
+      at reconcileChildren (node_modules/react-dom/cjs/react-dom.development.js:16990:28)
+      at updateHostComponent (node_modules/react-dom/cjs/react-dom.development.js:17632:3)
+      at beginWork (node_modules/react-dom/cjs/react-dom.development.js:19080:14)
+
+    console.error
+      Warning: Encountered two children with the same key, `4`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version.
+          at div
+          at /home/runner/work/tasks/tasks/node_modules/react-bootstrap/cjs/Row.js:22:3
+          at div
+          at /home/runner/work/tasks/tasks/node_modules/react-bootstrap/cjs/Container.js:24:3
+          at QuestionView (/home/runner/work/tasks/tasks/src/quizzer/Components/QuestionView.tsx:11:5)
+          at div
+          at div
+          at /home/runner/work/tasks/tasks/node_modules/react-bootstrap/cjs/Stack.js:23:7
+          at QuestionList (/home/runner/work/tasks/tasks/src/quizzer/Components/QuestionList.tsx:7:5)
+          at div
+          at div
+          at /home/runner/work/tasks/tasks/node_modules/react-bootstrap/cjs/Row.js:22:3
+          at div
+          at /home/runner/work/tasks/tasks/node_modules/react-bootstrap/cjs/Container.js:24:3
+          at QuizView (/home/runner/work/tasks/tasks/src/quizzer/Components/QuizView.tsx:8:5)
+          at div
+          at div
+          at /home/runner/work/tasks/tasks/node_modules/react-bootstrap/cjs/Stack.js:23:7
+          at QuizList (/home/runner/work/tasks/tasks/src/quizzer/Components/QuizList.tsx:7:5)
+          at div
+          at div
+          at App (/home/runner/work/tasks/tasks/src/App.tsx:17:29)
+
+      at printWarning (node_modules/react-dom/cjs/react-dom.development.js:67:30)
+      at error (node_modules/react-dom/cjs/react-dom.development.js:43:5)
+      at warnOnInvalidKey (node_modules/react-dom/cjs/react-dom.development.js:13620:11)
+      at reconcileChildrenArray (node_modules/react-dom/cjs/react-dom.development.js:13651:21)
+      at reconcileChildFibers (node_modules/react-dom/cjs/react-dom.development.js:14125:14)
+      at reconcileChildren (node_modules/react-dom/cjs/react-dom.development.js:16990:28)
+      at updateHostComponent (node_modules/react-dom/cjs/react-dom.development.js:17632:3)
+      at beginWork (node_modules/react-dom/cjs/react-dom.development.js:19080:14)
+
+    console.error
+      Warning: Encountered two children with the same key, `4`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version.
+          at div
+          at /home/runner/work/tasks/tasks/node_modules/react-bootstrap/cjs/Row.js:22:3
+          at div
+          at /home/runner/work/tasks/tasks/node_modules/react-bootstrap/cjs/Container.js:24:3
+          at QuestionView (/home/runner/work/tasks/tasks/src/quizzer/Components/QuestionView.tsx:11:5)
+          at div
+          at div
+          at /home/runner/work/tasks/tasks/node_modules/react-bootstrap/cjs/Stack.js:23:7
+          at QuestionList (/home/runner/work/tasks/tasks/src/quizzer/Components/QuestionList.tsx:7:5)
+          at div
+          at div
+          at /home/runner/work/tasks/tasks/node_modules/react-bootstrap/cjs/Row.js:22:3
+          at div
+          at /home/runner/work/tasks/tasks/node_modules/react-bootstrap/cjs/Container.js:24:3
+          at QuizView (/home/runner/work/tasks/tasks/src/quizzer/Components/QuizView.tsx:8:5)
+          at div
+          at div
+          at /home/runner/work/tasks/tasks/node_modules/react-bootstrap/cjs/Stack.js:23:7
+          at QuizList (/home/runner/work/tasks/tasks/src/quizzer/Components/QuizList.tsx:7:5)
+          at div
+          at div
+          at App (/home/runner/work/tasks/tasks/src/App.tsx:17:29)
+
+      at printWarning (node_modules/react-dom/cjs/react-dom.development.js:67:30)
+      at error (node_modules/react-dom/cjs/react-dom.development.js:43:5)
+      at warnOnInvalidKey (node_modules/react-dom/cjs/react-dom.development.js:13620:11)
+      at reconcileChildrenArray (node_modules/react-dom/cjs/react-dom.development.js:13651:21)
+      at reconcileChildFibers (node_modules/react-dom/cjs/react-dom.development.js:14125:14)
+      at reconcileChildren (node_modules/react-dom/cjs/react-dom.development.js:16990:28)
+      at updateHostComponent (node_modules/react-dom/cjs/react-dom.development.js:17632:3)
+      at beginWork (node_modules/react-dom/cjs/react-dom.development.js:19080:14)
+
+    console.error
+      Warning: Encountered two children with the same key, `4`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version.
+          at div
+          at /home/runner/work/tasks/tasks/node_modules/react-bootstrap/cjs/Row.js:22:3
+          at div
+          at /home/runner/work/tasks/tasks/node_modules/react-bootstrap/cjs/Container.js:24:3
+          at QuestionView (/home/runner/work/tasks/tasks/src/quizzer/Components/QuestionView.tsx:11:5)
+          at div
+          at div
+          at /home/runner/work/tasks/tasks/node_modules/react-bootstrap/cjs/Stack.js:23:7
+          at QuestionList (/home/runner/work/tasks/tasks/src/quizzer/Components/QuestionList.tsx:7:5)
+          at div
+          at div
+          at /home/runner/work/tasks/tasks/node_modules/react-bootstrap/cjs/Row.js:22:3
+          at div
+          at /home/runner/work/tasks/tasks/node_modules/react-bootstrap/cjs/Container.js:24:3
+          at QuizView (/home/runner/work/tasks/tasks/src/quizzer/Components/QuizView.tsx:8:5)
+          at div
+          at div
+          at /home/runner/work/tasks/tasks/node_modules/react-bootstrap/cjs/Stack.js:23:7
+          at QuizList (/home/runner/work/tasks/tasks/src/quizzer/Components/QuizList.tsx:7:5)
+          at div
+          at div
+          at App (/home/runner/work/tasks/tasks/src/App.tsx:17:29)
+
+      at printWarning (node_modules/react-dom/cjs/react-dom.development.js:67:30)
+      at error (node_modules/react-dom/cjs/react-dom.development.js:43:5)
+      at warnOnInvalidKey (node_modules/react-dom/cjs/react-dom.development.js:13620:11)
+      at reconcileChildrenArray (node_modules/react-dom/cjs/react-dom.development.js:13651:21)
+      at reconcileChildFibers (node_modules/react-dom/cjs/react-dom.development.js:14125:14)
+      at reconcileChildren (node_modules/react-dom/cjs/react-dom.development.js:16990:28)
+      at updateHostComponent (node_modules/react-dom/cjs/react-dom.development.js:17632:3)
+      at beginWork (node_modules/react-dom/cjs/react-dom.development.js:19080:14)
+
+    console.error
+      Warning: Encountered two children with the same key, `1`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version.
+          at div
+          at /home/runner/work/tasks/tasks/node_modules/react-bootstrap/cjs/Row.js:22:3
+          at div
+          at /home/runner/work/tasks/tasks/node_modules/react-bootstrap/cjs/Container.js:24:3
+          at QuestionView (/home/runner/work/tasks/tasks/src/quizzer/Components/QuestionView.tsx:11:5)
+          at div
+          at div
+          at /home/runner/work/tasks/tasks/node_modules/react-bootstrap/cjs/Stack.js:23:7
+          at QuestionList (/home/runner/work/tasks/tasks/src/quizzer/Components/QuestionList.tsx:7:5)
+          at div
+          at div
+          at /home/runner/work/tasks/tasks/node_modules/react-bootstrap/cjs/Row.js:22:3
+          at div
+          at /home/runner/work/tasks/tasks/node_modules/react-bootstrap/cjs/Container.js:24:3
+          at QuizView (/home/runner/work/tasks/tasks/src/quizzer/Components/QuizView.tsx:8:5)
+          at div
+          at div
+          at /home/runner/work/tasks/tasks/node_modules/react-bootstrap/cjs/Stack.js:23:7
+          at QuizList (/home/runner/work/tasks/tasks/src/quizzer/Components/QuizList.tsx:7:5)
+          at div
+          at div
+          at App (/home/runner/work/tasks/tasks/src/App.tsx:17:29)
+
+      at printWarning (node_modules/react-dom/cjs/react-dom.development.js:67:30)
+      at error (node_modules/react-dom/cjs/react-dom.development.js:43:5)
+      at warnOnInvalidKey (node_modules/react-dom/cjs/react-dom.development.js:13620:11)
+      at reconcileChildrenArray (node_modules/react-dom/cjs/react-dom.development.js:13651:21)
+      at reconcileChildFibers (node_modules/react-dom/cjs/react-dom.development.js:14125:14)
+      at reconcileChildren (node_modules/react-dom/cjs/react-dom.development.js:16990:28)
+      at updateHostComponent (node_modules/react-dom/cjs/react-dom.development.js:17632:3)
+      at beginWork (node_modules/react-dom/cjs/react-dom.development.js:19080:14)
+
+    console.error
+      Warning: Encountered two children with the same key, `1`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version.
+          at div
+          at /home/runner/work/tasks/tasks/node_modules/react-bootstrap/cjs/Row.js:22:3
+          at div
+          at /home/runner/work/tasks/tasks/node_modules/react-bootstrap/cjs/Container.js:24:3
+          at QuestionView (/home/runner/work/tasks/tasks/src/quizzer/Components/QuestionView.tsx:11:5)
+          at div
+          at div
+          at /home/runner/work/tasks/tasks/node_modules/react-bootstrap/cjs/Stack.js:23:7
+          at QuestionList (/home/runner/work/tasks/tasks/src/quizzer/Components/QuestionList.tsx:7:5)
+          at div
+          at div
+          at /home/runner/work/tasks/tasks/node_modules/react-bootstrap/cjs/Row.js:22:3
+          at div
+          at /home/runner/work/tasks/tasks/node_modules/react-bootstrap/cjs/Container.js:24:3
+          at QuizView (/home/runner/work/tasks/tasks/src/quizzer/Components/QuizView.tsx:8:5)
+          at div
+          at div
+          at /home/runner/work/tasks/tasks/node_modules/react-bootstrap/cjs/Stack.js:23:7
+          at QuizList (/home/runner/work/tasks/tasks/src/quizzer/Components/QuizList.tsx:7:5)
+          at div
+          at div
+          at App (/home/runner/work/tasks/tasks/src/App.tsx:17:29)
+
+      at printWarning (node_modules/react-dom/cjs/react-dom.development.js:67:30)
+      at error (node_modules/react-dom/cjs/react-dom.development.js:43:5)
+      at warnOnInvalidKey (node_modules/react-dom/cjs/react-dom.development.js:13620:11)
+      at reconcileChildrenArray (node_modules/react-dom/cjs/react-dom.development.js:13651:21)
+      at reconcileChildFibers (node_modules/react-dom/cjs/react-dom.development.js:14125:14)
+      at reconcileChildren (node_modules/react-dom/cjs/react-dom.development.js:16990:28)
+      at updateHostComponent (node_modules/react-dom/cjs/react-dom.development.js:17632:3)
+      at beginWork (node_modules/react-dom/cjs/react-dom.development.js:19080:14)
+
+    console.error
+      Warning: Encountered two children with the same key, `1`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version.
+          at div
+          at /home/runner/work/tasks/tasks/node_modules/react-bootstrap/cjs/Row.js:22:3
+          at div
+          at /home/runner/work/tasks/tasks/node_modules/react-bootstrap/cjs/Container.js:24:3
+          at QuestionView (/home/runner/work/tasks/tasks/src/quizzer/Components/QuestionView.tsx:11:5)
+          at div
+          at div
+          at /home/runner/work/tasks/tasks/node_modules/react-bootstrap/cjs/Stack.js:23:7
+          at QuestionList (/home/runner/work/tasks/tasks/src/quizzer/Components/QuestionList.tsx:7:5)
+          at div
+          at div
+          at /home/runner/work/tasks/tasks/node_modules/react-bootstrap/cjs/Row.js:22:3
+          at div
+          at /home/runner/work/tasks/tasks/node_modules/react-bootstrap/cjs/Container.js:24:3
+          at QuizView (/home/runner/work/tasks/tasks/src/quizzer/Components/QuizView.tsx:8:5)
+          at div
+          at div
+          at /home/runner/work/tasks/tasks/node_modules/react-bootstrap/cjs/Stack.js:23:7
+          at QuizList (/home/runner/work/tasks/tasks/src/quizzer/Components/QuizList.tsx:7:5)
+          at div
+          at div
+          at App (/home/runner/work/tasks/tasks/src/App.tsx:17:29)
+
+      at printWarning (node_modules/react-dom/cjs/react-dom.development.js:67:30)
+      at error (node_modules/react-dom/cjs/react-dom.development.js:43:5)
+      at warnOnInvalidKey (node_modules/react-dom/cjs/react-dom.development.js:13620:11)
+      at reconcileChildrenArray (node_modules/react-dom/cjs/react-dom.development.js:13651:21)
+      at reconcileChildFibers (node_modules/react-dom/cjs/react-dom.development.js:14125:14)
+      at reconcileChildren (node_modules/react-dom/cjs/react-dom.development.js:16990:28)
+      at updateHostComponent (node_modules/react-dom/cjs/react-dom.development.js:17632:3)
+      at beginWork (node_modules/react-dom/cjs/react-dom.development.js:19080:14)
+
+    console.error
+      Warning: Encountered two children with the same key, `2`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version.
+          at div
+          at /home/runner/work/tasks/tasks/node_modules/react-bootstrap/cjs/Row.js:22:3
+          at div
+          at /home/runner/work/tasks/tasks/node_modules/react-bootstrap/cjs/Container.js:24:3
+          at QuestionView (/home/runner/work/tasks/tasks/src/quizzer/Components/QuestionView.tsx:11:5)
+          at div
+          at div
+          at /home/runner/work/tasks/tasks/node_modules/react-bootstrap/cjs/Stack.js:23:7
+          at QuestionList (/home/runner/work/tasks/tasks/src/quizzer/Components/QuestionList.tsx:7:5)
+          at div
+          at div
+          at /home/runner/work/tasks/tasks/node_modules/react-bootstrap/cjs/Row.js:22:3
+          at div
+          at /home/runner/work/tasks/tasks/node_modules/react-bootstrap/cjs/Container.js:24:3
+          at QuizView (/home/runner/work/tasks/tasks/src/quizzer/Components/QuizView.tsx:8:5)
+          at div
+          at div
+          at /home/runner/work/tasks/tasks/node_modules/react-bootstrap/cjs/Stack.js:23:7
+          at QuizList (/home/runner/work/tasks/tasks/src/quizzer/Components/QuizList.tsx:7:5)
+          at div
+          at div
+          at App (/home/runner/work/tasks/tasks/src/App.tsx:17:29)
+
+      at printWarning (node_modules/react-dom/cjs/react-dom.development.js:67:30)
+      at error (node_modules/react-dom/cjs/react-dom.development.js:43:5)
+      at warnOnInvalidKey (node_modules/react-dom/cjs/react-dom.development.js:13620:11)
+      at reconcileChildrenArray (node_modules/react-dom/cjs/react-dom.development.js:13651:21)
+      at reconcileChildFibers (node_modules/react-dom/cjs/react-dom.development.js:14125:14)
+      at reconcileChildren (node_modules/react-dom/cjs/react-dom.development.js:16990:28)
+      at updateHostComponent (node_modules/react-dom/cjs/react-dom.development.js:17632:3)
+      at beginWork (node_modules/react-dom/cjs/react-dom.development.js:19080:14)
+
+    console.error
+      Warning: Encountered two children with the same key, `2`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version.
+          at div
+          at /home/runner/work/tasks/tasks/node_modules/react-bootstrap/cjs/Row.js:22:3
+          at div
+          at /home/runner/work/tasks/tasks/node_modules/react-bootstrap/cjs/Container.js:24:3
+          at QuestionView (/home/runner/work/tasks/tasks/src/quizzer/Components/QuestionView.tsx:11:5)
+          at div
+          at div
+          at /home/runner/work/tasks/tasks/node_modules/react-bootstrap/cjs/Stack.js:23:7
+          at QuestionList (/home/runner/work/tasks/tasks/src/quizzer/Components/QuestionList.tsx:7:5)
+          at div
+          at div
+          at /home/runner/work/tasks/tasks/node_modules/react-bootstrap/cjs/Row.js:22:3
+          at div
+          at /home/runner/work/tasks/tasks/node_modules/react-bootstrap/cjs/Container.js:24:3
+          at QuizView (/home/runner/work/tasks/tasks/src/quizzer/Components/QuizView.tsx:8:5)
+          at div
+          at div
+          at /home/runner/work/tasks/tasks/node_modules/react-bootstrap/cjs/Stack.js:23:7
+          at QuizList (/home/runner/work/tasks/tasks/src/quizzer/Components/QuizList.tsx:7:5)
+          at div
+          at div
+          at App (/home/runner/work/tasks/tasks/src/App.tsx:17:29)
+
+      at printWarning (node_modules/react-dom/cjs/react-dom.development.js:67:30)
+      at error (node_modules/react-dom/cjs/react-dom.development.js:43:5)
+      at warnOnInvalidKey (node_modules/react-dom/cjs/react-dom.development.js:13620:11)
+      at reconcileChildrenArray (node_modules/react-dom/cjs/react-dom.development.js:13651:21)
+      at reconcileChildFibers (node_modules/react-dom/cjs/react-dom.development.js:14125:14)
+      at reconcileChildren (node_modules/react-dom/cjs/react-dom.development.js:16990:28)
+      at updateHostComponent (node_modules/react-dom/cjs/react-dom.development.js:17632:3)
+      at beginWork (node_modules/react-dom/cjs/react-dom.development.js:19080:14)
+
+    console.error
+      Warning: Encountered two children with the same key, `2`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version.
+          at div
+          at /home/runner/work/tasks/tasks/node_modules/react-bootstrap/cjs/Row.js:22:3
+          at div
+          at /home/runner/work/tasks/tasks/node_modules/react-bootstrap/cjs/Container.js:24:3
+          at QuestionView (/home/runner/work/tasks/tasks/src/quizzer/Components/QuestionView.tsx:11:5)
+          at div
+          at div
+          at /home/runner/work/tasks/tasks/node_modules/react-bootstrap/cjs/Stack.js:23:7
+          at QuestionList (/home/runner/work/tasks/tasks/src/quizzer/Components/QuestionList.tsx:7:5)
+          at div
+          at div
+          at /home/runner/work/tasks/tasks/node_modules/react-bootstrap/cjs/Row.js:22:3
+          at div
+          at /home/runner/work/tasks/tasks/node_modules/react-bootstrap/cjs/Container.js:24:3
+          at QuizView (/home/runner/work/tasks/tasks/src/quizzer/Components/QuizView.tsx:8:5)
+          at div
+          at div
+          at /home/runner/work/tasks/tasks/node_modules/react-bootstrap/cjs/Stack.js:23:7
+          at QuizList (/home/runner/work/tasks/tasks/src/quizzer/Components/QuizList.tsx:7:5)
+          at div
+          at div
+          at App (/home/runner/work/tasks/tasks/src/App.tsx:17:29)
+
+      at printWarning (node_modules/react-dom/cjs/react-dom.development.js:67:30)
+      at error (node_modules/react-dom/cjs/react-dom.development.js:43:5)
+      at warnOnInvalidKey (node_modules/react-dom/cjs/react-dom.development.js:13620:11)
+      at reconcileChildrenArray (node_modules/react-dom/cjs/react-dom.development.js:13651:21)
+      at reconcileChildFibers (node_modules/react-dom/cjs/react-dom.development.js:14125:14)
+      at reconcileChildren (node_modules/react-dom/cjs/react-dom.development.js:16990:28)
+      at updateHostComponent (node_modules/react-dom/cjs/react-dom.development.js:17632:3)
+      at beginWork (node_modules/react-dom/cjs/react-dom.development.js:19080:14)
+
+    console.error
+      Warning: Encountered two children with the same key, `3`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version.
+          at div
+          at /home/runner/work/tasks/tasks/node_modules/react-bootstrap/cjs/Row.js:22:3
+          at div
+          at /home/runner/work/tasks/tasks/node_modules/react-bootstrap/cjs/Container.js:24:3
+          at QuestionView (/home/runner/work/tasks/tasks/src/quizzer/Components/QuestionView.tsx:11:5)
+          at div
+          at div
+          at /home/runner/work/tasks/tasks/node_modules/react-bootstrap/cjs/Stack.js:23:7
+          at QuestionList (/home/runner/work/tasks/tasks/src/quizzer/Components/QuestionList.tsx:7:5)
+          at div
+          at div
+          at /home/runner/work/tasks/tasks/node_modules/react-bootstrap/cjs/Row.js:22:3
+          at div
+          at /home/runner/work/tasks/tasks/node_modules/react-bootstrap/cjs/Container.js:24:3
+          at QuizView (/home/runner/work/tasks/tasks/src/quizzer/Components/QuizView.tsx:8:5)
+          at div
+          at div
+          at /home/runner/work/tasks/tasks/node_modules/react-bootstrap/cjs/Stack.js:23:7
+          at QuizList (/home/runner/work/tasks/tasks/src/quizzer/Components/QuizList.tsx:7:5)
+          at div
+          at div
+          at App (/home/runner/work/tasks/tasks/src/App.tsx:17:29)
+
+      at printWarning (node_modules/react-dom/cjs/react-dom.development.js:67:30)
+      at error (node_modules/react-dom/cjs/react-dom.development.js:43:5)
+      at warnOnInvalidKey (node_modules/react-dom/cjs/react-dom.development.js:13620:11)
+      at reconcileChildrenArray (node_modules/react-dom/cjs/react-dom.development.js:13651:21)
+      at reconcileChildFibers (node_modules/react-dom/cjs/react-dom.development.js:14125:14)
+      at reconcileChildren (node_modules/react-dom/cjs/react-dom.development.js:16990:28)
+      at updateHostComponent (node_modules/react-dom/cjs/react-dom.development.js:17632:3)
+      at beginWork (node_modules/react-dom/cjs/react-dom.development.js:19080:14)
+
+    console.error
+      Warning: Encountered two children with the same key, `3`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version.
+          at div
+          at /home/runner/work/tasks/tasks/node_modules/react-bootstrap/cjs/Row.js:22:3
+          at div
+          at /home/runner/work/tasks/tasks/node_modules/react-bootstrap/cjs/Container.js:24:3
+          at QuestionView (/home/runner/work/tasks/tasks/src/quizzer/Components/QuestionView.tsx:11:5)
+          at div
+          at div
+          at /home/runner/work/tasks/tasks/node_modules/react-bootstrap/cjs/Stack.js:23:7
+          at QuestionList (/home/runner/work/tasks/tasks/src/quizzer/Components/QuestionList.tsx:7:5)
+          at div
+          at div
+          at /home/runner/work/tasks/tasks/node_modules/react-bootstrap/cjs/Row.js:22:3
+          at div
+          at /home/runner/work/tasks/tasks/node_modules/react-bootstrap/cjs/Container.js:24:3
+          at QuizView (/home/runner/work/tasks/tasks/src/quizzer/Components/QuizView.tsx:8:5)
+          at div
+          at div
+          at /home/runner/work/tasks/tasks/node_modules/react-bootstrap/cjs/Stack.js:23:7
+          at QuizList (/home/runner/work/tasks/tasks/src/quizzer/Components/QuizList.tsx:7:5)
+          at div
+          at div
+          at App (/home/runner/work/tasks/tasks/src/App.tsx:17:29)
+
+      at printWarning (node_modules/react-dom/cjs/react-dom.development.js:67:30)
+      at error (node_modules/react-dom/cjs/react-dom.development.js:43:5)
+      at warnOnInvalidKey (node_modules/react-dom/cjs/react-dom.development.js:13620:11)
+      at reconcileChildrenArray (node_modules/react-dom/cjs/react-dom.development.js:13651:21)
+      at reconcileChildFibers (node_modules/react-dom/cjs/react-dom.development.js:14125:14)
+      at reconcileChildren (node_modules/react-dom/cjs/react-dom.development.js:16990:28)
+      at updateHostComponent (node_modules/react-dom/cjs/react-dom.development.js:17632:3)
+      at beginWork (node_modules/react-dom/cjs/react-dom.development.js:19080:14)
+
+    console.error
+      Warning: Encountered two children with the same key, `3`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version.
+          at div
+          at /home/runner/work/tasks/tasks/node_modules/react-bootstrap/cjs/Row.js:22:3
+          at div
+          at /home/runner/work/tasks/tasks/node_modules/react-bootstrap/cjs/Container.js:24:3
+          at QuestionView (/home/runner/work/tasks/tasks/src/quizzer/Components/QuestionView.tsx:11:5)
+          at div
+          at div
+          at /home/runner/work/tasks/tasks/node_modules/react-bootstrap/cjs/Stack.js:23:7
+          at QuestionList (/home/runner/work/tasks/tasks/src/quizzer/Components/QuestionList.tsx:7:5)
+          at div
+          at div
+          at /home/runner/work/tasks/tasks/node_modules/react-bootstrap/cjs/Row.js:22:3
+          at div
+          at /home/runner/work/tasks/tasks/node_modules/react-bootstrap/cjs/Container.js:24:3
+          at QuizView (/home/runner/work/tasks/tasks/src/quizzer/Components/QuizView.tsx:8:5)
+          at div
+          at div
+          at /home/runner/work/tasks/tasks/node_modules/react-bootstrap/cjs/Stack.js:23:7
+          at QuizList (/home/runner/work/tasks/tasks/src/quizzer/Components/QuizList.tsx:7:5)
+          at div
+          at div
+          at App (/home/runner/work/tasks/tasks/src/App.tsx:17:29)
+
+      at printWarning (node_modules/react-dom/cjs/react-dom.development.js:67:30)
+      at error (node_modules/react-dom/cjs/react-dom.development.js:43:5)
+      at warnOnInvalidKey (node_modules/react-dom/cjs/react-dom.development.js:13620:11)
+      at reconcileChildrenArray (node_modules/react-dom/cjs/react-dom.development.js:13651:21)
+      at reconcileChildFibers (node_modules/react-dom/cjs/react-dom.development.js:14125:14)
+      at reconcileChildren (node_modules/react-dom/cjs/react-dom.development.js:16990:28)
+      at updateHostComponent (node_modules/react-dom/cjs/react-dom.development.js:17632:3)
+      at beginWork (node_modules/react-dom/cjs/react-dom.development.js:19080:14)
+
 -----------------------------|---------|----------|---------|---------|-------------------
 File                         | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
 -----------------------------|---------|----------|---------|---------|-------------------
-All files                    |   97.73 |    93.28 |    98.5 |   97.68 |                   
- src                         |   96.42 |    91.11 |   97.46 |   96.33 |                   
-  App.tsx                    |   66.66 |       50 |      50 |   66.66 | 36                
+All files                    |   92.89 |    89.04 |   91.08 |      93 |                   
+ src                         |   95.04 |    91.11 |   93.97 |   95.38 |                   
+  App.tsx                    |   55.55 |       50 |   33.33 |   57.14 | 21-25,46          
   ShowHide.tsx               |   66.66 |       50 |      50 |   66.66 | 66                
   arrays.ts                  |     100 |      100 |     100 |     100 |                   
   functions.ts               |   88.88 |    85.71 |     100 |   88.88 | 24,28,30          
@@ -57,8 +807,12 @@ All files                    |   97.73 |    93.28 |    98.5 |   97.68 |
   question.ts                |       0 |        0 |       0 |       0 |                   
  src/quizzer                 |     100 |      100 |     100 |     100 |                   
   Quizzer.tsx                |     100 |      100 |     100 |     100 |                   
+ src/quizzer/Components      |   59.45 |    41.66 |   52.63 |   59.45 |                   
+  QuestionList.tsx           |   71.42 |       50 |   71.42 |   71.42 | 23-27             
+  QuestionView.tsx           |   54.54 |       40 |      50 |   54.54 | 19-27             
+  QuizList.tsx               |      50 |      100 |      40 |      50 | 101-102,123-128   
+  QuizView.tsx               |      50 |      100 |   33.33 |      50 | 19,42             
  src/quizzer/Interfaces      |       0 |        0 |       0 |       0 |                   
-  answer.ts                  |       0 |        0 |       0 |       0 |                   
   question.ts                |       0 |        0 |       0 |       0 |                   
   quizzes.ts                 |       0 |        0 |       0 |       0 |                   
 -----------------------------|---------|----------|---------|---------|-------------------
@@ -66,5 +820,5 @@ All files                    |   97.73 |    93.28 |    98.5 |   97.68 |
 Test Suites: 21 passed, 21 total
 Tests:       135 passed, 135 total
 Snapshots:   0 total
-Time:        17.638 s
+Time:        15.589 s
 Ran all test suites.
