@@ -2,8 +2,6 @@ import React from "react";
 import { Button, Stack, Row, Col } from "react-bootstrap";
 import { Quiz } from "../Interfaces/quizzes";
 import { QuizView } from "./QuizView";
-import SAQuiz from "../Data/new_quizSA.json";
-import MCQuiz from "../Data/new_quizMC.json";
 
 export function QuizList({
     quizzes,
@@ -16,12 +14,96 @@ export function QuizList({
     deleteQuiz: (id: number) => void;
     addQuiz: (newQuiz: Quiz) => void;
 }): JSX.Element {
-    const quizSA: Quiz = SAQuiz;
-    const quizMC: Quiz = MCQuiz;
+    const quizSA = {
+        id: quizzes.length,
+        title: "<Add Title>",
+        list: [
+            {
+                idQuest: 1,
+                name: "<Q1>",
+                body: "<Prompt>",
+                type: "short_answer_question",
+                answer: "<Correct Answer>",
+                options: [],
+                points: 2,
+                correct: false,
+                published: true
+            },
+            {
+                idQuest: 2,
+                name: "<Q2>",
+                body: "<Prompt>",
+                type: "short_answer_question",
+                answer: "<Correct Answer>",
+                options: [],
+                points: 2,
+                correct: false,
+                published: true
+            },
+            {
+                idQuest: 3,
+                name: "<Q3>",
+                body: "<Prompt>",
+                type: "short_answer_question",
+                answer: "<Correct Answer>",
+                options: [],
+                points: 2,
+                correct: false,
+                published: true
+            }
+        ],
+        length: 3,
+        description: "<Quiz Description>"
+    } as Quiz;
+    const quizMC = {
+        id: quizzes.length,
+        title: "<Add Title>",
+        list: [
+            {
+                idQuest: 1,
+                name: "<Q1>",
+                body: "<Prompt>",
+                type: "multiple_choice_question",
+                answer: "<Correct Answer>",
+                options: ["Option 1", "Option 2", "Option 3", "Option 4"],
+                points: 2,
+                correct: false,
+                published: true
+            },
+            {
+                idQuest: 2,
+                name: "<Q2>",
+                body: "<Prompt>",
+                type: "multiple_choice_question",
+                answer: "<Correct Answer>",
+                options: ["Option 1", "Option 2", "Option 3", "Option 4"],
+                points: 2,
+                correct: false,
+                published: true
+            },
+            {
+                idQuest: 3,
+                name: "<Q3>",
+                body: "<Prompt>",
+                type: "multiple_choice_question",
+                answer: "<Correct Answer>",
+                options: ["Option 1", "Option 2", "Option 3", "Option 4"],
+                points: 2,
+                correct: false,
+                published: true
+            }
+        ],
+        length: 3,
+        description: "<Quiz Description>"
+    } as Quiz;
 
     function newQ(newQuiz: Quiz) {
         addQuiz(newQuiz);
-        newQuiz = { ...newQuiz, id: quizzes.length };
+        <QuizView
+            quiz={newQuiz}
+            edit={edit}
+            deleteQuiz={deleteQuiz}
+        ></QuizView>;
     }
 
     return (

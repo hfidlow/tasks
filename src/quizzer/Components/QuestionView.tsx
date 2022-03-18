@@ -39,7 +39,7 @@ export function QuestionView({
                 </Row>
                 <Row>
                     {question.options.map((opt: string) => (
-                        <Form.Group key={question.id}>
+                        <Form.Group key={question.idQuest}>
                             <Form.Check
                                 inline
                                 type="radio"

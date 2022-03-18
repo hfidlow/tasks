@@ -2,7 +2,7 @@ export type QuestionType = "multiple_choice_question" | "short_answer_question";
 
 export interface Question {
     // ID of question
-    id: number;
+    idQuest: number;
     // Name of the question
     name: string;
     // Prompt of the question

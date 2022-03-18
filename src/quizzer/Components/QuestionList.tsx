@@ -37,7 +37,7 @@ export function QuestionList({
                 Points earned: {earnedPts}/{totalPts}
             </div>
             {questions.map((question: Question) => (
-                <div key={question.id} className="bg-light border m-2 p-2">
+                <div key={question.idQuest} className="bg-light border m-2 p-2">
                     <QuestionView question={question}></QuestionView>
                 </div>
             ))}
