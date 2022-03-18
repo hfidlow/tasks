@@ -21,6 +21,10 @@ function App(): JSX.Element {
         setQuizzes(quizzes.filter((quiz: Quiz): boolean => quiz.id !== id));
     }
 
+    function addQuiz(newQuiz: Quiz) {
+        setQuizzes([...quizzes, newQuiz]);
+    }
+
     return (
         <div className="App">
             <header className="App-header">
@@ -47,6 +51,7 @@ function App(): JSX.Element {
                     quizzes={quizzes}
                     edit={edit}
                     deleteQuiz={deleteQuiz}
+                    addQuiz={addQuiz}
                 ></QuizList>
             </div>
             <ShowHideTasks></ShowHideTasks>
