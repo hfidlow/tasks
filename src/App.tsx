@@ -1,30 +1,14 @@
-import React, { useState } from "react";
-import { Form } from "react-bootstrap";
+import React from "react";
 //import { Button, Col, Container, Row } from "react-bootstrap";
 import "./App.css";
-import startQuizzes from "./quizzer/Data/starting_quizzes.json";
-import { Quiz } from "./quizzer/Interfaces/quizzes";
+import { Quizzer } from "./quizzer/Quizzer";
 import { ShowHideTasks } from "./ShowHide";
-import { QuizList } from "./quizzer/Components/QuizList";
 import img1 from "./Images/img1.png";
 import img2 from "./Images/img2.png";
 import img3 from "./Images/img3.png";
 import img4 from "./Images/img4.png";
 
-const QUIZZES = startQuizzes.map((quiz): Quiz => quiz as Quiz);
-
 function App(): JSX.Element {
-    const [edit, setEdit] = useState<boolean>(false);
-    const [quizzes, setQuizzes] = useState<Quiz[]>(QUIZZES);
-
-    function deleteQuiz(id: number) {
-        setQuizzes(quizzes.filter((quiz: Quiz): boolean => quiz.id !== id));
-    }
-
-    function addQuiz(newQuiz: Quiz) {
-        setQuizzes([...quizzes, newQuiz]);
-    }
-
     return (
         <div className="App">
             <header className="App-header">
@@ -37,23 +21,8 @@ function App(): JSX.Element {
                     width="200"
                     height="200"
                 />
-                <Form.Check
-                    inline
-                    type="switch"
-                    id="in-edit"
-                    label={edit ? "Edit Mode" : "Play Mode"}
-                    checked={edit}
-                    onChange={(e) => setEdit(e.target.checked)}
-                />
             </header>
-            <div>
-                <QuizList
-                    quizzes={quizzes}
-                    edit={edit}
-                    deleteQuiz={deleteQuiz}
-                    addQuiz={addQuiz}
-                ></QuizList>
-            </div>
+            <Quizzer></Quizzer>
             <ShowHideTasks></ShowHideTasks>
             <div>
                 <img src={img1} alt="img1" width={300} height={380} />
