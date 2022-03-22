@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Button, Container, Row } from "react-bootstrap";
 //import { Container, Row, Col, Button } from "react-bootstrap";
 import { Quiz } from "../Interfaces/quizzes";
+import { Question } from "../Interfaces/question";
 import { QuestionList } from "./QuestionList";
 
 export function QuizView({
@@ -14,10 +15,31 @@ export function QuizView({
     deleteQuiz: (id: number) => void;
 }): JSX.Element {
     const [selected, setSelected] = useState<boolean>(false);
+    const [quests, setQuests] = useState<Question[]>(quiz.list);
 
     function updateSelected() {
         setSelected(!selected);
     }
+
+    function deleteQuest(id: number) {
+        setQuests(
+            quests.filter((quest: Question): boolean => quest.idQuest !== id)
+        );
+    }
+
+    function addQuest(newQuestion: Question) {
+        setQuests([...quests, newQuestion]);
+    }
+
+    function editQuest(id: number, newQuestion: Question) {
+        setQuests(
+            quests.map(
+                (quest: Question): Question =>
+                    quest.idQuest === id ? newQuestion : quest
+            )
+        );
+    }
+
     return (
         <Container>
             <Row>
@@ -28,7 +50,13 @@ export function QuizView({
             </Row>
             <Row>
                 <div hidden={!selected}>
-                    <QuestionList questions={quiz.list}></QuestionList>
+                    <QuestionList
+                        questions={quiz.list}
+                        edit={edit}
+                        deleteQuest={deleteQuest}
+                        addQuest={addQuest}
+                        editQuest={editQuest}
+                    ></QuestionList>
                     <Button onClick={updateSelected}>Close</Button>
                 </div>
                 <div>

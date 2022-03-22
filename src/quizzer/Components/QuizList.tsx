@@ -15,7 +15,7 @@ export function QuizList({
     addQuiz: (newQuiz: Quiz) => void;
 }): JSX.Element {
     const quizSA = {
-        id: quizzes.length,
+        id: quizzes[quizzes.length - 1].id + 1,
         title: "<Add Title>",
         list: [
             {
@@ -56,7 +56,7 @@ export function QuizList({
         description: "<Quiz Description>"
     } as Quiz;
     const quizMC = {
-        id: quizzes.length,
+        id: quizzes[quizzes.length - 1].id + 1,
         title: "<Add Title>",
         list: [
             {
