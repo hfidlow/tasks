@@ -19,6 +19,12 @@ export function Quizzer(): JSX.Element {
         setQuizzes([...quizzes, newQuiz]);
     }
 
+    function editQuiz(id: number, newQuiz: Quiz) {
+        setQuizzes(
+            quizzes.map((quiz: Quiz): Quiz => (quiz.id === id ? newQuiz : quiz))
+        );
+    }
+
     return (
         <div className="App">
             <h3>Quizzer</h3>
@@ -38,6 +44,7 @@ export function Quizzer(): JSX.Element {
                     edit={edit}
                     deleteQuiz={deleteQuiz}
                     addQuiz={addQuiz}
+                    editQuiz={editQuiz}
                 ></QuizList>
             </div>
         </div>

@@ -62,7 +62,7 @@
                 "type": "multiple_choice_question",
                 "answer": "Thomas Jefferson",
                 "options": [
-                    "George Washingtion",
+                    "George Washington",
                     "Thomas Jefferson",
                     "John Adams",
                     "Andrew Jackson"
@@ -81,8 +81,7 @@
                     "Abraham Lincoln",
                     "William Henry Harrison",
                     "James Garfield",
-                    "Chester Arthur",
-                    "John F. Kennedy"
+                    "Chester Arthur"
                 ],
                 "points": 2,
                 "correct": false,
