@@ -44,6 +44,15 @@ export function QuizView({
         );
     }
 
+    function swapQuestions(quest1Ind: number, quest2Ind: number) {
+        const questCopy = [...quests];
+        [questCopy[quest1Ind], questCopy[quest2Ind]] = [
+            questCopy[quest2Ind],
+            questCopy[quest1Ind]
+        ];
+        setQuests(questCopy);
+    }
+
     function updateQuiz() {
         editQuiz(quiz.id, { ...quiz, list: quests });
     }
@@ -65,6 +74,7 @@ export function QuizView({
                         addQuest={addQuest}
                         updateQuestions={updateQuestions}
                         updateQuiz={updateQuiz}
+                        swapQuestions={swapQuestions}
                     ></QuestionList>
                     <Button onClick={updateSelected}>Close</Button>
                 </div>

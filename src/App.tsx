@@ -44,7 +44,7 @@ function App(): JSX.Element {
                 <li> Edit Questions ✔️</li>
                 <li> Add Questions ✔️</li>
                 <li> Delete Questions ✔️</li>
-                <li> Reorder Questions ❌</li>
+                <li> Reorder Questions ✔️</li>
                 <li> Add Quizzes ✔️</li>
                 <li> Delete Quizzes ✔️</li>
             </div>

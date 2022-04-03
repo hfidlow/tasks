@@ -27,7 +27,7 @@ export function QuestionView({
     const [pts, setPts] = useState<number>(question.points);
     const [desc, setDesc] = useState<string>(question.body);
     const [pub, setPub] = useState<boolean>(question.published);
-
+    const [optionsMC, setOptionsMC] = useState<string[]>(question.options);
     const [edited, setEdited] = useState<boolean>(false);
 
     function updateAnswer(event: ChangeEvent) {
@@ -38,7 +38,21 @@ export function QuestionView({
         setSubmitted(!submitted);
     }
 
-    function update() {
+    function updateMC() {
+        updateQuestions(question.idQuest, {
+            ...question,
+            name: title,
+            body: desc,
+            answer: ansCorrect,
+            points: pts,
+            options: optionsMC,
+            published: pub
+        });
+        updateQuiz();
+        setEdited(false);
+    }
+
+    function updateSA() {
         updateQuestions(question.idQuest, {
             ...question,
             name: title,
@@ -71,6 +85,35 @@ export function QuestionView({
 
     function updatePub() {
         setPub(!pub);
+        setEdited(true);
+    }
+
+    function updateOpts1(event: ChangeEvent) {
+        const newOpts = [...optionsMC];
+        const newVal = [event.target.value];
+        setOptionsMC(newVal.concat(newOpts.slice(1)));
+        setEdited(true);
+    }
+
+    function updateOpts2(event: ChangeEvent) {
+        const newOpts = [...optionsMC];
+        setOptionsMC(
+            newOpts.slice(0, 1).concat(event.target.value, newOpts.slice(2))
+        );
+        setEdited(true);
+    }
+
+    function updateOpts3(event: ChangeEvent) {
+        const newOpts = [...optionsMC];
+        setOptionsMC(
+            newOpts.slice(0, 2).concat(event.target.value, newOpts.slice(3))
+        );
+        setEdited(true);
+    }
+
+    function updateOpts4(event: ChangeEvent) {
+        const newOpts = [...optionsMC];
+        setOptionsMC(newOpts.slice(0, 3).concat(event.target.value));
         setEdited(true);
     }
 
@@ -133,23 +176,43 @@ export function QuestionView({
                         </div>
                     </Row>
                     <Row>
-                        <Col>Option 1:</Col>
-                        <Col></Col>
+                        <div>
+                            Option 1:
+                            <Form.Control
+                                value={optionsMC[0]}
+                                onChange={updateOpts1}
+                            />
+                        </div>
                     </Row>
                     <Row>
-                        <Col>Option 2:</Col>
-                        <Col></Col>
+                        <div>
+                            Option 2:
+                            <Form.Control
+                                value={optionsMC[1]}
+                                onChange={updateOpts2}
+                            />
+                        </div>
                     </Row>
                     <Row>
-                        <Col>Option 3:</Col>
-                        <Col></Col>
+                        <div>
+                            Option 3:
+                            <Form.Control
+                                value={optionsMC[2]}
+                                onChange={updateOpts3}
+                            />
+                        </div>
                     </Row>
                     <Row>
-                        <Col>Option 4:</Col>
-                        <Col></Col>
+                        <div>
+                            Option 4:
+                            <Form.Control
+                                value={optionsMC[3]}
+                                onChange={updateOpts4}
+                            />
+                        </div>
                     </Row>
                     <Row>
-                        <Button onClick={update} hidden={!edited}>
+                        <Button onClick={updateMC} hidden={!edited}>
                             Confirm Edits
                         </Button>
                     </Row>
@@ -159,38 +222,58 @@ export function QuestionView({
             return (
                 <Container>
                     <Row>
-                        <h3>
-                            {question.name} ({question.points} points):
-                        </h3>
-                        <div>{question.body}</div>
-                    </Row>
-                    <Row>
-                        <Form.Control value={answer} onChange={updateAnswer} />
-                    </Row>
-                    <Row>
                         <Col>
-                            <div hidden={!submitted}>
-                                {answer === question.answer
-                                    ? "Correct!"
-                                    : "Dang, not quite."}
-                            </div>
+                            <Form.Check
+                                inline
+                                type="switch"
+                                id="is-published"
+                                label={pub ? "Published" : "Unpublished"}
+                                checked={pub}
+                                onChange={updatePub}
+                            />
                         </Col>
                         <Col>
-                            <div>
-                                <Button
-                                    onClick={updateSubmitted}
-                                    disabled={submitted}
-                                >
-                                    Submit
-                                </Button>
-                                <Button
-                                    onClick={updateSubmitted}
-                                    hidden={!submitted}
-                                >
-                                    Reset
-                                </Button>
-                            </div>
+                            <Button
+                                onClick={() => deleteQuest(question.idQuest)}
+                            >
+                                Delete
+                            </Button>
                         </Col>
+                    </Row>
+                    <Row>
+                        <div>
+                            Title:
+                            <Form.Control
+                                value={title}
+                                onChange={updateTitle}
+                            />
+                        </div>
+                    </Row>
+                    <Row>
+                        <div>
+                            Points:
+                            <Form.Control value={pts} onChange={updatePts} />
+                        </div>
+                    </Row>
+                    <Row>
+                        <div>
+                            Prompt:
+                            <Form.Control value={desc} onChange={updateDesc} />
+                        </div>
+                    </Row>
+                    <Row>
+                        <div>
+                            Answer:
+                            <Form.Control
+                                value={ansCorrect}
+                                onChange={updateCorrectAns}
+                            />
+                        </div>
+                    </Row>
+                    <Row>
+                        <Button onClick={updateSA} hidden={!edited}>
+                            Confirm Edits
+                        </Button>
                     </Row>
                 </Container>
             );

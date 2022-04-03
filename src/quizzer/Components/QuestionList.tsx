@@ -9,7 +9,8 @@ export function QuestionList({
     deleteQuest,
     addQuest,
     updateQuestions,
-    updateQuiz
+    updateQuiz,
+    swapQuestions
 }: {
     questions: Question[];
     edit: boolean;
@@ -17,17 +18,15 @@ export function QuestionList({
     addQuest: (newQuestion: Question) => void;
     updateQuestions: (idQuest: number, newQuestion: Question) => void;
     updateQuiz: () => void;
+    swapQuestions: (ind1: number, ind2: number) => void;
 }): JSX.Element {
-    const pointArray = questions.map(
-        (question: Question): number => question.points
-    );
-    const totalPts = pointArray.reduce(
-        (currentPts: number, num: number) => currentPts + num,
-        0
-    );
-    const questionsCorrect = questions.filter(
-        (question: Question): boolean => question.correct === true
-    );
+    function moveQUp(index: number) {
+        swapQuestions(index, index - 1);
+    }
+    function moveQDown(index: number) {
+        swapQuestions(index, index + 1);
+    }
+
     const questSA = {
         idQuest: questions[questions.length - 1].idQuest + 1,
         name: "<Question Name>",
@@ -50,24 +49,9 @@ export function QuestionList({
         correct: false,
         published: false
     } as Question;
-    let earnedPts: number;
-    if (questionsCorrect.length > 0) {
-        const correctPointArray = questionsCorrect.map(
-            (question: Question): number => question.points
-        );
-        earnedPts = correctPointArray.reduce(
-            (currentPts: number, num: number) => currentPts + num,
-            0
-        );
-    } else {
-        earnedPts = 0;
-    }
 
     return (
         <Stack gap={2}>
-            <div>
-                Points earned: {earnedPts}/{totalPts}
-            </div>
             {questions.map((question: Question) => (
                 <div key={question.idQuest} className="bg-light border m-2 p-2">
                     <QuestionView
@@ -77,6 +61,23 @@ export function QuestionList({
                         updateQuestions={updateQuestions}
                         updateQuiz={updateQuiz}
                     ></QuestionView>
+                    <Button
+                        hidden={!edit}
+                        disabled={question.idQuest === questions[0].idQuest}
+                        onClick={() => moveQUp(questions.indexOf(question))}
+                    >
+                        Move Up
+                    </Button>
+                    <Button
+                        hidden={!edit}
+                        disabled={
+                            question.idQuest ===
+                            questions[questions.length - 1].idQuest
+                        }
+                        onClick={() => moveQDown(questions.indexOf(question))}
+                    >
+                        Move Down
+                    </Button>
                 </div>
             ))}
             <div hidden={!edit}>
