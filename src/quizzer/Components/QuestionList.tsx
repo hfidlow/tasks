@@ -8,13 +8,15 @@ export function QuestionList({
     edit,
     deleteQuest,
     addQuest,
-    editQuest
+    updateQuestions,
+    updateQuiz
 }: {
     questions: Question[];
     edit: boolean;
     deleteQuest: (idQuest: number) => void;
     addQuest: (newQuestion: Question) => void;
-    editQuest: (id: number, newQuestion: Question) => void;
+    updateQuestions: (idQuest: number, newQuestion: Question) => void;
+    updateQuiz: () => void;
 }): JSX.Element {
     const pointArray = questions.map(
         (question: Question): number => question.points
@@ -72,7 +74,8 @@ export function QuestionList({
                         question={question}
                         edit={edit}
                         deleteQuest={deleteQuest}
-                        editQuest={editQuest}
+                        updateQuestions={updateQuestions}
+                        updateQuiz={updateQuiz}
                     ></QuestionView>
                 </div>
             ))}

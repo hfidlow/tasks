@@ -38,12 +38,12 @@ function App(): JSX.Element {
                 <li> Short answer and Multiple Choice ✔️</li>
                 <li> Check correctness ✔️</li>
                 <li> Sum points ❌</li>
-                <li> Clear Answers ❌</li>
-                <li> Publish Questions ❌</li>
-                <li> Filter Questions ❌</li>
-                <li> Edit Questions ❌</li>
-                <li> Add Questions ❌</li>
-                <li> Delete Questions ❌</li>
+                <li> Clear Answers ✔️</li>
+                <li> Publish Questions ✔️</li>
+                <li> Filter Questions ✔️</li>
+                <li> Edit Questions ✔️</li>
+                <li> Add Questions ✔️</li>
+                <li> Delete Questions ✔️</li>
                 <li> Reorder Questions ❌</li>
                 <li> Add Quizzes ✔️</li>
                 <li> Delete Quizzes ✔️</li>

@@ -11,12 +11,14 @@ export function QuestionView({
     question,
     edit,
     deleteQuest,
-    editQuest
+    updateQuestions,
+    updateQuiz
 }: {
     question: Question;
     edit: boolean;
     deleteQuest: (idQuest: number) => void;
-    editQuest: (id: number, newQuestion: Question) => void;
+    updateQuestions: (idQuest: number, newQuestion: Question) => void;
+    updateQuiz: () => void;
 }): JSX.Element {
     const [answer, setAnswer] = useState<string>("");
     const [submitted, setSubmitted] = useState<boolean>(false);
@@ -36,16 +38,17 @@ export function QuestionView({
         setSubmitted(!submitted);
     }
 
-    function updateQuestion() {
-        editQuest(question.idQuest, {
+    function update() {
+        updateQuestions(question.idQuest, {
             ...question,
             name: title,
             body: desc,
             answer: ansCorrect,
             points: pts,
-            correct: submitted && answer === question.answer ? true : false,
             published: pub
         });
+        updateQuiz();
+        setEdited(false);
     }
 
     function updateTitle(event: ChangeEvent) {
@@ -146,7 +149,7 @@ export function QuestionView({
                         <Col></Col>
                     </Row>
                     <Row>
-                        <Button onClick={updateQuestion} hidden={!edited}>
+                        <Button onClick={update} hidden={!edited}>
                             Confirm Edits
                         </Button>
                     </Row>

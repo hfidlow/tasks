@@ -8,11 +8,13 @@ import { QuestionList } from "./QuestionList";
 export function QuizView({
     quiz,
     edit,
-    deleteQuiz
+    deleteQuiz,
+    editQuiz
 }: {
     quiz: Quiz;
     edit: boolean;
     deleteQuiz: (id: number) => void;
+    editQuiz: (id: number, newQuiz: Quiz) => void;
 }): JSX.Element {
     const [selected, setSelected] = useState<boolean>(false);
     const [quests, setQuests] = useState<Question[]>(quiz.list);
@@ -25,19 +27,25 @@ export function QuizView({
         setQuests(
             quests.filter((quest: Question): boolean => quest.idQuest !== id)
         );
+        updateQuiz();
     }
 
     function addQuest(newQuestion: Question) {
         setQuests([...quests, newQuestion]);
+        updateQuiz();
     }
 
-    function editQuest(id: number, newQuestion: Question) {
+    function updateQuestions(questID: number, quest: Question) {
         setQuests(
             quests.map(
-                (quest: Question): Question =>
-                    quest.idQuest === id ? newQuestion : quest
+                (question: Question): Question =>
+                    question.idQuest === questID ? quest : question
             )
         );
+    }
+
+    function updateQuiz() {
+        editQuiz(quiz.id, { ...quiz, list: quests });
     }
 
     return (
@@ -51,11 +59,12 @@ export function QuizView({
             <Row>
                 <div hidden={!selected}>
                     <QuestionList
-                        questions={quiz.list}
+                        questions={quests}
                         edit={edit}
                         deleteQuest={deleteQuest}
                         addQuest={addQuest}
-                        editQuest={editQuest}
+                        updateQuestions={updateQuestions}
+                        updateQuiz={updateQuiz}
                     ></QuestionList>
                     <Button onClick={updateSelected}>Close</Button>
                 </div>

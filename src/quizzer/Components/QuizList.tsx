@@ -7,12 +7,14 @@ export function QuizList({
     quizzes,
     edit,
     deleteQuiz,
-    addQuiz
+    addQuiz,
+    editQuiz
 }: {
     quizzes: Quiz[];
     edit: boolean;
     deleteQuiz: (id: number) => void;
     addQuiz: (newQuiz: Quiz) => void;
+    editQuiz: (id: number, newQuiz: Quiz) => void;
 }): JSX.Element {
     const quizSA = {
         id: quizzes[quizzes.length - 1].id + 1,
@@ -103,6 +105,7 @@ export function QuizList({
             quiz={newQuiz}
             edit={edit}
             deleteQuiz={deleteQuiz}
+            editQuiz={editQuiz}
         ></QuizView>;
     }
 
@@ -114,6 +117,7 @@ export function QuizList({
                         quiz={quiz}
                         edit={edit}
                         deleteQuiz={deleteQuiz}
+                        editQuiz={editQuiz}
                     ></QuizView>
                 </div>
             ))}
