@@ -54,7 +54,7 @@ export function QuizView({
     }
 
     function updateQuiz() {
-        editQuiz(quiz.id, { ...quiz, list: quests });
+        editQuiz(quiz.id, { ...quiz, list: quests, length: length });
     }
 
     return (
