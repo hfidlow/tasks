@@ -101,12 +101,6 @@ export function QuizList({
 
     function newQ(newQuiz: Quiz) {
         addQuiz(newQuiz);
-        <QuizView
-            quiz={newQuiz}
-            edit={edit}
-            deleteQuiz={deleteQuiz}
-            editQuiz={editQuiz}
-        ></QuizView>;
     }
 
     return (

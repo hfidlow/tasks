@@ -15,6 +15,7 @@ describe("Quizzer Tests", () => {
             )
         ).toBeInTheDocument();
     });
+
     test("Questions in Quizzes (can select quiz and see questions with name, body, and points)", () => {
         const selectButtons = screen.getAllByRole("button", {
             name: /Select/i
@@ -34,6 +35,7 @@ describe("Quizzer Tests", () => {
             screen.getByText("Simple Addition 1 (2 points):")
         ).not.toBeVisible();
     });
+
     test("SA and MC questions (two types of questions)", () => {
         const selectButtons = screen.getAllByRole("button", {
             name: /Select/i
@@ -49,7 +51,8 @@ describe("Quizzer Tests", () => {
         const firstMC = mcBoxes[0];
         expect(firstMC).toBeInTheDocument();
     });
-    test("Correctness of Answer (can choose an answer and see if they are right)", () => {
+
+    test("Correctness of Answer and Clear (can choose an answer and see if they are right, and clear if incorrect to try again)", () => {
         const selectButtons = screen.getAllByRole("button", {
             name: /Select/i
         });
@@ -96,14 +99,209 @@ describe("Quizzer Tests", () => {
         expect(screen.queryByText("Correct!")).not.toBeNull();
         resetButton.click();
     });
+
     // Sum points (user can see total points for a quiz)
-    // Clear Answer (users can clear their existing answers for a quiz)
-    // Publish Questions (users can publish or unpublish a question)
-    // Filter Questions (users can filter questiosn such that only published questions are shown)
-    // Edit Questions (users can edit the questions and fields of a quiz)
-    // Add Questions (users can add questions)
-    // Delete Questions (users can delete questions)
-    // Reorder Questions (users can reorder questions)
+
+    test("Publish and Filter Questions (users can publish/unpublish a question to alter view)", () => {
+        const editSlider = screen.getByRole("checkbox");
+        const selectButtons = screen.getAllByRole("button", {
+            name: /Select/i
+        });
+        selectButtons[0].click(); // Opens the first quiz
+        const subButtons = screen.getAllByRole("button", {
+            name: /Submit/i
+        });
+        expect(subButtons.length).toEqual(3);
+        editSlider.click();
+        const allSliders = screen.getAllByRole("checkbox");
+        allSliders[allSliders.length - 1].click(); // Change the last question from unpublished to published
+        const updateButton = screen.getByRole("button", {
+            name: /Confirm Edits/i
+        });
+        updateButton.click();
+        editSlider.click();
+        const subButtons2 = screen.getAllByRole("button", {
+            name: /Submit/i
+        });
+        expect(subButtons2.length).toEqual(4);
+        editSlider.click();
+        const allSliders2 = screen.getAllByRole("checkbox");
+        allSliders2[1].click();
+        const updateButton2 = screen.getByRole("button", {
+            name: /Confirm Edits/i
+        });
+        updateButton2.click();
+        allSliders2[2].click();
+        const updateButton3 = screen.getByRole("button", {
+            name: /Confirm Edits/i
+        });
+        updateButton3.click();
+        editSlider.click();
+        const subButtons3 = screen.getAllByRole("button", {
+            name: /Submit/i
+        });
+        expect(subButtons3.length).toEqual(2);
+    });
+
+    test("Edit Questions (users can edit the questions and fields of a quiz)", () => {
+        const selectButtons = screen.getAllByRole("button", {
+            name: /Select/i
+        });
+        selectButtons[1].click(); // Opens the second quiz
+        expect(
+            screen.getByText("Presidents 1 (2 points):")
+        ).toBeInTheDocument();
+        expect(
+            screen.getByText(
+                "Who was the 3rd president of the United States of America?"
+            )
+        ).toBeInTheDocument();
+        const mcBoxes = screen.getAllByRole("radio");
+        const thirdPres = mcBoxes[1];
+        thirdPres.click();
+        const subButton = screen.getAllByRole("button", {
+            name: /Submit/i
+        });
+        subButton[0].click();
+        expect(screen.queryByText("Correct!")).not.toBeNull();
+        const resetButtons = screen.getAllByRole("button", {
+            name: /Reset/i
+        });
+        const resetButton = resetButtons[0];
+        resetButton.click();
+        const editSlider = screen.getByRole("checkbox");
+        editSlider.click();
+        const textBoxes = screen.getAllByRole("textbox");
+        const pts = textBoxes[1];
+        const prompt = textBoxes[2];
+        const ans = textBoxes[3];
+        userEvent.clear(pts);
+        userEvent.type(pts, "3");
+        userEvent.clear(prompt);
+        userEvent.type(
+            prompt,
+            "Who was the 2nd president of the United States of America?"
+        );
+        userEvent.clear(ans);
+        userEvent.type(ans, "John Adams");
+        const updateButton = screen.getByRole("button", {
+            name: /Confirm Edits/i
+        });
+        updateButton.click();
+        editSlider.click();
+        const mcBoxes2 = screen.getAllByRole("radio");
+        const secondPres = mcBoxes2[2];
+        secondPres.click();
+        expect(screen.queryByText("Correct!")).not.toBeVisible();
+        const subButton2 = screen.getAllByRole("button", {
+            name: /Submit/i
+        });
+        subButton2[0].click();
+        expect(
+            screen.queryByText("Presidents 1 (2 points):")
+        ).not.toBeInTheDocument();
+        expect(
+            screen.queryByText(
+                "Who was the 3rd president of the United States of America?"
+            )
+        ).not.toBeInTheDocument();
+        expect(
+            screen.getByText("Presidents 1 (3 points):")
+        ).toBeInTheDocument();
+        expect(
+            screen.getByText(
+                "Who was the 2nd president of the United States of America?"
+            )
+        ).toBeInTheDocument();
+        expect(screen.queryByText("Correct!")).not.toBeNull();
+    });
+
+    test("Add Questions (users can add questions)", () => {
+        const selectButtons = screen.getAllByRole("button", {
+            name: /Select/i
+        });
+        selectButtons[0].click(); // Opens the first quiz
+        const subButtons = screen.getAllByRole("button", {
+            name: /Submit/i
+        });
+        expect(subButtons.length).toEqual(3);
+        const editSlider = screen.getByRole("checkbox");
+        editSlider.click();
+        const addMC = screen.getByRole("button", {
+            name: /Add Multiple Choice Question/i
+        });
+        const addSA = screen.getByRole("button", {
+            name: /Add Short Answer Question/i
+        });
+        addMC.click();
+        addSA.click();
+        const allSliders = screen.getAllByRole("checkbox");
+        allSliders[5].click();
+        const updateButton = screen.getByRole("button", {
+            name: /Confirm Edits/i
+        });
+        updateButton.click();
+        allSliders[6].click();
+        const updateButton2 = screen.getByRole("button", {
+            name: /Confirm Edits/i
+        });
+        updateButton2.click();
+        editSlider.click();
+        const subButtons2 = screen.getAllByRole("button", {
+            name: /Submit/i
+        });
+        expect(subButtons2.length).toEqual(5);
+    });
+
+    test("Delete Questions (users can delete questions)", () => {
+        const selectButtons = screen.getAllByRole("button", {
+            name: /Select/i
+        });
+        selectButtons[0].click(); // Opens the first quiz
+        const subButtons = screen.getAllByRole("button", {
+            name: /Submit/i
+        });
+        expect(subButtons.length).toEqual(3);
+        const editSlider = screen.getByRole("checkbox");
+        editSlider.click();
+        const delButtons = screen.getAllByRole("button", {
+            name: /Delete/i
+        });
+        delButtons[0].click();
+        delButtons[1].click();
+        editSlider.click();
+        const subButtons2 = screen.getAllByRole("button", {
+            name: /Submit/i
+        });
+        expect(subButtons2.length).toEqual(1);
+    });
+
+    test("Reorder Questions (users can reorder questions)", () => {
+        const selectButtons = screen.getAllByRole("button", {
+            name: /Select/i
+        });
+        selectButtons[0].click(); // Opens the first quiz
+        const editSlider = screen.getByRole("checkbox");
+        editSlider.click();
+        const textBoxes = screen.getAllByRole("textbox");
+        expect(textBoxes[0]).toHaveDisplayValue("Simple Addition 1");
+        expect(textBoxes[4]).toHaveDisplayValue("Simple Addition 2");
+        const downButtons = screen.getAllByRole("button", {
+            name: /Move Down/i
+        });
+        downButtons[0].click();
+        const textBoxes2 = screen.getAllByRole("textbox");
+        expect(textBoxes2[4]).toHaveDisplayValue("Simple Addition 1");
+        expect(textBoxes2[0]).toHaveDisplayValue("Simple Addition 2");
+        const upButton = screen.getAllByRole("button", {
+            name: /Move Up/i
+        });
+        upButton[1].click();
+        const textBoxes3 = screen.getAllByRole("textbox");
+        expect(textBoxes3[0]).toHaveDisplayValue("Simple Addition 1");
+        expect(textBoxes3[4]).toHaveDisplayValue("Simple Addition 2");
+    });
+
     test("Add Quizzes (users can add quizzes)", () => {
         const selectButtons = screen.getAllByRole("button", {
             name: /Select/i
